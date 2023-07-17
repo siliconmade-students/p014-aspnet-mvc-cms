@@ -9,9 +9,9 @@ using Cms.Data.Entity;
 
 namespace Cms.Data.Utility
 {
-	public class AppDbContext : DbContext
+	public class AppDbContext : DbContext 
 	{
-		public AppDbContext(DbContextOptions<AppDbContext> options) : base() { }
+		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Page> Pages { get; set; }
@@ -21,7 +21,7 @@ namespace Cms.Data.Utility
 		public DbSet<Setting> Settings { get; set; }
 		public DbSet<User> Users{ get; set; }
 
-
+		// Fluent API a geçiş yapılmalı
 
 	}
 }

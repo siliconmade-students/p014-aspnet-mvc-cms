@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cms.Web.Mvc", "Cms.Web.Mvc\Cms.Web.Mvc.csproj", "{07282509-B396-430A-9E23-B0E721C19BE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cms.Data", "Cms.Data\Cms.Data.csproj", "{55708270-A02B-408D-940A-1EED5984C0B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cms.Data", "Cms.Data\Cms.Data.csproj", "{55708270-A02B-408D-940A-1EED5984C0B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cms.Business", "Cms.Business\Cms.Business.csproj", "{8B63382C-124F-4686-8FAA-BE5BDCA083AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{55708270-A02B-408D-940A-1EED5984C0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55708270-A02B-408D-940A-1EED5984C0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55708270-A02B-408D-940A-1EED5984C0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

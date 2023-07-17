@@ -1,7 +1,11 @@
+using Cms.Business;
+using Cms.Data.Utility;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddBusinessServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -13,7 +17,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+using (var scope = app.Services.CreateScope())
+{
+    scope.EnsureCreated();
+}
+
+    app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -25,11 +34,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
-{
     endpoints.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    );
-});
-
+    ));
 app.Run();

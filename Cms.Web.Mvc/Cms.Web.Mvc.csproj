@@ -15,4 +15,8 @@
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cms.Business\Cms.Business.csproj" />
+  </ItemGroup>
+
 </Project>
