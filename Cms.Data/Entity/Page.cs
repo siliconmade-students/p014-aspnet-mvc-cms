@@ -17,7 +17,7 @@ namespace Cms.Data.Entity
         public string Title { get; set; }
         [Column(TypeName = "text")]
         public string Content { get; set; }
-        [Column(TypeName = "bool")]
+        [Column(TypeName = "bit")]
         public bool IsActive { get; set; }
     }
 }

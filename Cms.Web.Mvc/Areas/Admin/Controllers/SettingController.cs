@@ -2,6 +2,8 @@
 
 namespace Cms.Web.Mvc.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+
     public class SettingController : Controller
     {
         public IActionResult Index()
