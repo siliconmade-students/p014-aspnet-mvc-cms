@@ -16,5 +16,7 @@ namespace Cms.Data.Entity
         public string Name { get; set; }
         [Column(TypeName = "nvarchar(200)")]
         public string Description { get; set; }
+
+        public List<Post>? Posts { get; set; }
     }
 }

@@ -28,7 +28,9 @@ namespace Cms.Business
 
             db.Database.EnsureDeleted();
 
-            db.Database.EnsureCreated();
+            db.Database.EnsureCreated(); 
+
+            DbSeeder.Seed(db);
         }
     }
 }
