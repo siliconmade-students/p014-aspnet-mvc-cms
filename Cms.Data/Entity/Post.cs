@@ -22,5 +22,6 @@ namespace Cms.Data.Entity
         [Column(TypeName = "ntext")]
         public string Content { get; set; }
 
+        public List<Category>? Categories { get; set; }
     }
 }
