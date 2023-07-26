@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Cms.Business.Services.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cms.Web.Mvc.Controllers
 {
     public class CategoryController : Controller
     {
-        public IActionResult Index(int id, int page)
+        private readonly IPostService _postService;
+        public CategoryController(IPostService postService)
         {
-            return View();
+			_postService = postService;
+
+		}
+
+        [Route("Category/{category}")]
+        public IActionResult Filter(string category, int page =1 )
+        {
+            return View(_postService.GetByCategory(category,page));
         }
     }
 }

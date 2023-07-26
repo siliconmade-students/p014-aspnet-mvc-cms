@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cms.Data.Entity
+namespace Cms.Business.Dtos
 {
-    public class User : BaseEntity
+    public class UserDto : BaseEntity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -23,6 +23,5 @@ namespace Cms.Data.Entity
         public string City { get; set; }
         [Column(TypeName = "varchar(20)")]
         public string Phone { get; set; }
-
     }
 }

@@ -36,7 +36,7 @@
 
 <body id="top">
 
-    @Html.Partial("_Header")
+    @await Component.InvokeAsync("Navbar")
     @RenderBody()
     @Html.Partial("_Footer")
 

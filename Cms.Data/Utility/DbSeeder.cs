@@ -18,7 +18,8 @@ public static class DbSeeder
                 .RuleFor(c => c.Name, f => f.Commerce.Categories(1)[0])
                 .RuleFor(c => c.Description, f => f.Lorem.Sentence());
 
-            var categories = categoryFaker.Generate(10);
+
+            var categories = categoryFaker.Generate(5);
 
             _db.Categories.AddRange(categories);
             _db.SaveChanges();
@@ -104,5 +105,17 @@ public static class DbSeeder
             _db.Settings.AddRange(settings);
             _db.SaveChanges();
         }
-    }
+
+		if (!_db.Doctors.Any())
+		{
+			var doctorFaker = new Faker<Doctor>()
+				.RuleFor(s => s.Name, f => f.Name.FirstName())
+				.RuleFor(s => s.Surname, f => f.Name.LastName());
+
+			var doctors = doctorFaker.Generate(5);
+
+			_db.Doctors.AddRange(doctors);
+			_db.SaveChanges();
+		}
+	}
 }
