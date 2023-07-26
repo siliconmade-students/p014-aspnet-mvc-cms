@@ -1,4 +1,6 @@
-﻿using Cms.Data.Utility;
+﻿using Cms.Business.Services;
+using Cms.Business.Services.Abstract;
+using Cms.Data.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,11 @@ namespace Cms.Business
                 string connectionString = configuration.GetConnectionString("Default");
                 o.UseSqlServer(connectionString);
             });
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IDoctorService, DoctorService>();
+            services.AddTransient<IPostService, PostService>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         public static void EnsureCreated(this IServiceScope scope)
@@ -28,7 +35,7 @@ namespace Cms.Business
 
             db.Database.EnsureDeleted();
 
-            db.Database.EnsureCreated(); 
+            db.Database.EnsureCreated();
 
             DbSeeder.Seed(db);
         }
