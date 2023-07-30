@@ -5,14 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cms.Data.Entity
 {
-    public class Category : BaseEntity
+    public class Department : BaseEntity
     {
         [Unicode, MaxLength(100)]
         public string Name { get; set; }
 
         [Unicode, MaxLength(200)]
         public string Description { get; set; }
-
-        public List<Post>? Posts { get; set; }
     }
 }
