@@ -7,22 +7,19 @@ namespace Cms.Web.Mvc.ViewComponents
 {
     public class NavbarViewComponent : ViewComponent
     {
-        private readonly IDepartmentService _categoryService;
-        private readonly IDoctorService _doctorService;
-        public NavbarViewComponent(IDepartmentService categoryService, IDoctorService doctorService)
+        private readonly IDepartmentService _departmentService;
+        public NavbarViewComponent(IDepartmentService departmentService)
         {
-            _categoryService = categoryService;
-            _doctorService = doctorService;
+            _departmentService = departmentService;
 
 		}
 
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var departments = _categoryService.GetAll();
-            var doctors = _doctorService.GetAll();
+            var departments = _departmentService.GetAll();
 
-            return View(new NavbarViewModel { DepartmentDtos = departments, DoctorDtos = doctors});
+            return View(new NavigationViewModel { DepartmentDtos = departments});
         }
     }
 }
