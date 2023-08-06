@@ -1,5 +1,5 @@
 using Cms.Business;
-using Cms.Data.Utility;
+using Cms.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +23,7 @@ using (var scope = app.Services.CreateScope())
     scope.EnsureCreated();
 }
 
-app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -31,10 +31,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
-    endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    ));
+	endpoints.MapControllerRoute(
+	  name: "areas",
+	  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+	));
 
 app.MapControllerRoute(
     name: "default",

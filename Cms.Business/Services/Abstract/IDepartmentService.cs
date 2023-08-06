@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Cms.Business.Services.Abstract
 {
-    public interface ICategoryService
+    public interface IDepartmentService
     {
-        List<CategoryDto> GetAll();
+        List<DepartmentDto> GetAll();
     }
 }

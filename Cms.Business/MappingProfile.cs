@@ -14,7 +14,7 @@ namespace Cms.Business
     {
         public MappingProfile()
         {
-            CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Department, DepartmentDto>().ReverseMap();
             CreateMap<Post, PostDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
             CreateMap<Doctor, DoctorDto>().ReverseMap();

@@ -1,6 +1,6 @@
 ﻿using Cms.Business.Services;
 using Cms.Business.Services.Abstract;
-using Cms.Data.Utility;
+using Cms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +22,7 @@ namespace Cms.Business
                 string connectionString = configuration.GetConnectionString("Default");
                 o.UseSqlServer(connectionString);
             });
-            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<IDoctorService, DoctorService>();
             services.AddTransient<IPostService, PostService>();
 

@@ -4,7 +4,7 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
 
-    public class CategoryController : Controller
+    public class DepartmentController : Controller
     {
         public IActionResult Index()
         {
