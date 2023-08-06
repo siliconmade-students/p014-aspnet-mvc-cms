@@ -1,4 +1,4 @@
-﻿@model NavbarViewModel
+﻿@model NavigationViewModel
 
 <header>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
@@ -18,9 +18,10 @@
 					<li class="nav-item"><a class="nav-link" asp-controller="Page" asp-action="Detail">About</a></li>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown"
+						<a class="nav-link dropdown-toggle" asp-controller="Department" asp-action="index" id="dropdown02" data-toggle="dropdown"
 						   aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
 						<ul class="dropdown-menu" aria-labelledby="dropdown02">
+							<li><a class="dropdown-item" asp-controller="Department" asp-action="" asp-route-page="page-1">View all</a></li>
 							@foreach(var item in Model.DepartmentDtos){
 								<li><a class="dropdown-item" asp-controller="Department" asp-action="@item.Slug" asp-route-page="page-1">@item.Name </a></li>
 							}
@@ -71,7 +72,7 @@
 						</ul>
 					</li>
 					-->
-					<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="">Contact</a></li>
 				</ul>
 			</div>
 		</div>
