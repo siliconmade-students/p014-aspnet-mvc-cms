@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Cms.Business.Services.Abstract;
 using Cms.Business.Dtos;
-using Cms.Data.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cms.Data;
 
 namespace Cms.Business.Services
 {

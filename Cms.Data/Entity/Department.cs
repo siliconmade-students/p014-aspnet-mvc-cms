@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cms.Business.Dtos
+namespace Cms.Data.Entity
 {
-    public class CategoryDto
+    public class Department
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -17,6 +17,9 @@ namespace Cms.Business.Dtos
         [Column(TypeName = "nvarchar(200)")]
         public string Description { get; set; }
 
-        public List<PostDto>? Posts { get; set; }
-    }
+        public string Slug { get; set; }
+
+        public List<Post>? Posts { get; set; }
+		public List<Doctor>? Doctors { get; set; }
+	}
 }

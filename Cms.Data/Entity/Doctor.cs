@@ -12,5 +12,9 @@ namespace Cms.Data.Entity
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
+
+		public string? Content { get; set; }
+		public Department? Department { get; set; }
+		public int? DepartmentId { get; set; }
 	}
 }

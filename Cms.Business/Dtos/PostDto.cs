@@ -14,14 +14,12 @@ namespace Cms.Business.Dtos
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column(TypeName = "int")]
         public int UserId { get; set; } 
         public UserDto User { get; set; }
         [Column(TypeName = "nvarchar(200)")]
         public string Title { get; set; }
-        [Column(TypeName = "ntext")]
         public string Content { get; set; }
 
-        public List<CategoryDto>? Categories { get; set; }
+        public List<DepartmentDto>? Departments { get; set; }
     }
 }

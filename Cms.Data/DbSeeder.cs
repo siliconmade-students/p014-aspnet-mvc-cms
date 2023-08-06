@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bogus;
+using Cms.Data.Entity;
+
+namespace Cms.Data;
+
+public static class DbSeeder
+{
+	public static void Seed(AppDbContext _db)
+	{
+		if (!_db.Departments.Any())
+		{
+			var departments = new List<Department>
+			{
+				new(){ Name="Genel Cerrahi", Description="Genel Cerrahi açıklaması",Slug="genel_cerrahi"},
+				new(){ Name="Dahiliye", Description="Dahiliye açıklaması",Slug ="dahiliye"},
+				new(){ Name="Göğüs cerrahisi", Description="Göğüs cerrahisi açıklaması", Slug="gogus_cerrahisi"},
+				new(){ Name="Acil tıp", Description="Acil tıp açıklaması", Slug="acil_tip"}
+			};
+
+			_db.Departments.AddRange(departments);
+			_db.SaveChanges();
+		}
+
+		if (!_db.Pages.Any())
+		{
+			var pageFaker = new Faker<Page>()
+				.RuleFor(p => p.Title, f => f.Company.CompanyName())
+				.RuleFor(p => p.Content, f => f.Lorem.Paragraphs(3))
+				.RuleFor(p => p.IsActive, f => f.Random.Bool());
+
+			var pages = pageFaker.Generate(5);
+
+			_db.Pages.AddRange(pages);
+			_db.SaveChanges();
+		}
+
+		if (!_db.Users.Any())
+		{
+			var userFaker = new Faker<User>()
+				.RuleFor(u => u.Email, f => f.Internet.Email())
+				.RuleFor(u => u.Password, f => f.Internet.Password())
+				.RuleFor(u => u.Name, f => f.Person.FullName)
+				.RuleFor(u => u.City, f => f.Address.City())
+				.RuleFor(u => u.Phone, f => f.Phone.PhoneNumber("###-###-####"));
+
+			var users = userFaker.Generate(10);
+
+			_db.Users.AddRange(users);
+			_db.SaveChanges();
+		}
+
+		if (!_db.Posts.Any())
+		{
+			var postFaker = new Faker<Post>()
+				.RuleFor(p => p.Title, f => f.Lorem.Sentence())
+				.RuleFor(p => p.Content, f => f.Lorem.Paragraphs(5))
+				.RuleFor(p => p.UserId, f => f.Random.Number(1, 10))
+				.RuleFor(p => p.Departments, f => f.PickRandom(_db.Departments.ToList(), f.Random.Number(1, 3)).ToList());
+
+			var posts = postFaker.Generate(10);
+
+			_db.Posts.AddRange(posts);
+			_db.SaveChanges();
+		}
+
+		if (!_db.PostComments.Any())
+		{
+			var postCommentFaker = new Faker<PostComment>()
+				.RuleFor(pc => pc.PostId, f => f.Random.Number(1, 10))
+				.RuleFor(pc => pc.UserId, f => f.Random.Number(1, 10))
+				.RuleFor(pc => pc.Comment, f => f.Lorem.Sentence())
+				.RuleFor(pc => pc.IsActive, f => f.Random.Bool());
+
+			var postComments = postCommentFaker.Generate(10);
+
+			_db.PostComments.AddRange(postComments);
+			_db.SaveChanges();
+		}
+
+		if (!_db.PostImages.Any())
+		{
+			var postImageFaker = new Faker<PostImage>()
+				.RuleFor(pi => pi.PostId, f => f.Random.Number(1, 10))
+				.RuleFor(pi => pi.ImagePath, f => f.Image.PicsumUrl());
+
+			var postImages = postImageFaker.Generate(10);
+
+			_db.PostImages.AddRange(postImages);
+			_db.SaveChanges();
+		}
+
+		if (!_db.Settings.Any())
+		{
+			var settingFaker = new Faker<Setting>()
+				.RuleFor(s => s.UserId, f => f.Random.Number(1, 10))
+				.RuleFor(s => s.Name, f => f.Lorem.Word())
+				.RuleFor(s => s.Value, f => f.Lorem.Sentence());
+
+			var settings = settingFaker.Generate(10);
+
+			_db.Settings.AddRange(settings);
+			_db.SaveChanges();
+		}
+
+		if (!_db.Doctors.Any())
+		{
+			var doctorFaker = new Faker<Doctor>()
+				.RuleFor(s => s.Name, f => f.Name.FirstName())
+				.RuleFor(s => s.Surname, f => f.Name.LastName());
+
+			var doctors = doctorFaker.Generate(5);
+
+			_db.Doctors.AddRange(doctors);
+			_db.SaveChanges();
+		}
+	}
+}
