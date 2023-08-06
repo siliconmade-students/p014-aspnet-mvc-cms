@@ -17,7 +17,7 @@ namespace Cms.Business
             CreateMap<Department, DepartmentDto>().ReverseMap();
             CreateMap<Post, PostDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
-            CreateMap<Doctor, DoctorDto>().ReverseMap();
+            CreateMap<Doctor, DoctorDto>().ForMember(e => e.DepartmentDtoId, e => e.MapFrom(e2 => e2.DepartmentId));
             //CreateMap<Product, ProductDto>().ReverseMap();
         }
     }

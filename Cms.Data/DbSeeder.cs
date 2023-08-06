@@ -12,6 +12,7 @@ public static class DbSeeder
 {
 	public static void Seed(AppDbContext _db)
 	{
+		List<Department> departmentsCopy = new List<Department>();
 		if (!_db.Departments.Any())
 		{
 			var departments = new List<Department>
@@ -21,7 +22,7 @@ public static class DbSeeder
 				new(){ Name="Göğüs cerrahisi", Description="Göğüs cerrahisi açıklaması", Slug="gogus_cerrahisi"},
 				new(){ Name="Acil tıp", Description="Acil tıp açıklaması", Slug="acil_tip"}
 			};
-
+			departmentsCopy = departments;
 			_db.Departments.AddRange(departments);
 			_db.SaveChanges();
 		}
@@ -111,9 +112,10 @@ public static class DbSeeder
 		{
 			var doctorFaker = new Faker<Doctor>()
 				.RuleFor(s => s.Name, f => f.Name.FirstName())
-				.RuleFor(s => s.Surname, f => f.Name.LastName());
+				.RuleFor(s => s.Surname, f => f.Name.LastName())
+				.RuleFor(s => s.DepartmentId, f => f.Random.Int(1, departmentsCopy.Count()));
 
-			var doctors = doctorFaker.Generate(5);
+			var doctors = doctorFaker.Generate(10);
 
 			_db.Doctors.AddRange(doctors);
 			_db.SaveChanges();
