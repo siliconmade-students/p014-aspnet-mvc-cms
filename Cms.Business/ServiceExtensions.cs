@@ -22,7 +22,7 @@ namespace Cms.Business
             services.AddDbContext<AppDbContext>(o =>
             {
                 // appSettings.json içerisindeki Default bağlantı metnini almayı sağlar.
-                string connectionString = configuration.GetConnectionString("DefaultMac");
+                string connectionString = configuration.GetConnectionString("Default");
                 o.UseSqlServer(connectionString);
             });
             services.AddTransient<IDepartmentService, DepartmentService>();

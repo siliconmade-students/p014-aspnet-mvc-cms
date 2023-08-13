@@ -14,10 +14,6 @@ using System.Threading.Tasks;
 
 namespace Cms.Business.Services
 {
-    public interface IUserService
-    {
-        void SendResetPasswordEmail(string email);
-    }
 
     public class UserService : IUserService
     {
