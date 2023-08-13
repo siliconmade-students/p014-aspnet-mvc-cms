@@ -12,6 +12,11 @@ namespace Cms.Web.Mvc.Controllers
 
 		}
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         [Route("Department/{slug}")]
         public IActionResult Filter(string slug, int page =1 )
         {
