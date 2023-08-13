@@ -1,17 +1,16 @@
-﻿using Cms.Web.Mvc.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Cms.Business.Services.Abstract;
 using Cms.Data;
 using Cms.Data.Entity;
-using Cms.Business.Services;
+using Cms.Web.Mvc.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Cms.Business.Services.Abstract;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Cms.Web.Mvc.Controllers
 {
+
     public class AuthController : Controller
     {
         private readonly IUserService _userService;

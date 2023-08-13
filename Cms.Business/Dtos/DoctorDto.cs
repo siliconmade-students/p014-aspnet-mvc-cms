@@ -1,20 +1,13 @@
-﻿using Cms.Data.Entity;
-using Cms.Data.Entity.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cms.Business.Dtos.Abstract;
 
 namespace Cms.Business.Dtos;
 
-public class DoctorDto : BaseEntity
+public class DoctorDto : BaseDto
 {
-	public int Id { get; set; }
-	public string Name { get; set; }
-	public string Surname { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
 
-	public string? Content { get; set; }
-	public DepartmentDto DepartmentDto { get; set; }
-	public int DepartmentDtoId { get; set; }
+    public string? Content { get; set; }
+    public DepartmentDto DepartmentDto { get; set; }
+    public int DepartmentDtoId { get; set; }
 }

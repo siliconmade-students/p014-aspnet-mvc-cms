@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cms.Data.Entity.Abstract
 {
-    public abstract class BaseEntity : IAuiditEntity
+    public abstract class BaseEntity
     {
-        [DataType(DataType.DateTime)]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-
-        [DataType(DataType.DateTime)]
-        public DateTime UpdatedAt { get; set; }
-
-        [DataType(DataType.DateTime)]
-        public DateTime DeletedAt { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
     }
 }

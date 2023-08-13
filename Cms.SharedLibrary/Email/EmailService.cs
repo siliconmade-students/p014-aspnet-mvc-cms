@@ -4,26 +4,27 @@ using System.Net;
 using System.Net.Mail;
 using Microsoft.Extensions.Options;
 
-
 namespace Cms.SharedLibrary.Email
 {
-    public class GmailEmailService : IEmailService
+    public class EmailService : IEmailService
     {
         private readonly EmailSettings _emailSettings;
 
-        public GmailEmailService(IOptions<EmailSettings> emailSettings)
+        public EmailService(IOptions<EmailSettings> emailSettings)
         {
             _emailSettings = emailSettings.Value;
         }
 
         public void Send(string toMail, string subject, string body)
         {
+            // SmtpClient: Sunucu ayarları
             var client = new SmtpClient(_emailSettings.Host, _emailSettings.Port)
             {
                 Credentials = new NetworkCredential(_emailSettings.Username, _emailSettings.Password),
                 EnableSsl = true
             };
 
+            // MailMessage: Mail ayarları
             var mail = new MailMessage()
             {
                 From = new MailAddress(_emailSettings.FromMail, _emailSettings.FromName),
@@ -33,6 +34,8 @@ namespace Cms.SharedLibrary.Email
             };
 
             mail.To.Add(new MailAddress(toMail));
+            //mail.CC.Add(new MailAddress(toMail));
+            //mail.Bcc.Add("cmg.web@gmail.com");
 
             client.Send(mail);
         }

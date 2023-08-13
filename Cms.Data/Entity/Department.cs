@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Cms.Data.Entity.Abstract;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cms.Data.Entity
 {
-    public class Department
+    public class Department : AuditEntity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Column(TypeName = "nvarchar(100)")]
+        [MaxLength(100)]
         public string Name { get; set; }
-        [Column(TypeName = "nvarchar(200)")]
+
+        [MaxLength(300)]
         public string Description { get; set; }
 
+        [MaxLength(1000)]
+        public string Content { get; set; }
+
         public string Slug { get; set; }
+        public string CoverImagePath { get; set; }
 
         public List<Post>? Posts { get; set; }
-		public List<Doctor>? Doctors { get; set; }
-	}
+        public List<Doctor>? Doctors { get; set; }
+    }
 }

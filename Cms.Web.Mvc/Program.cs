@@ -1,12 +1,14 @@
 using Cms.Business;
-using Cms.Data;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Cms.SharedLibrary.Email;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email"));
+
 builder.Services.AddBusinessServices(builder.Configuration);
 
 builder.Services
@@ -17,8 +19,6 @@ builder.Services
         o.LoginPath = "/Auth/Login";
         o.AccessDeniedPath = "/Auth/AccessDenied";
     });
-
-builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email:MailTrap"));
 
 var app = builder.Build();
 
@@ -35,7 +35,7 @@ using (var scope = app.Services.CreateScope())
     scope.EnsureCreated();
 }
 
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -43,11 +43,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-	endpoints.MapControllerRoute(
-	  name: "areas",
-	  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-	));
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
