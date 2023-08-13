@@ -1,0 +1,12 @@
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/bin/Debug/net7.0/Cms.SharedLibrary.deps.json
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/bin/Debug/net7.0/Cms.SharedLibrary.dll
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/bin/Debug/net7.0/Cms.SharedLibrary.pdb
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.csproj.AssemblyReference.cache
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.AssemblyInfoInputs.cache
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.AssemblyInfo.cs
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.csproj.CoreCompileInputs.cache
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.dll
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/refint/Cms.SharedLibrary.dll
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.pdb
+/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/ref/Cms.SharedLibrary.dll

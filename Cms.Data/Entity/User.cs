@@ -20,9 +20,13 @@ namespace Cms.Data.Entity
         [Column(TypeName = "nvarchar(100)")]
         public string Name { get; set; }
         [Column(TypeName = "nvarchar(100)")]
+        public string Surname { get; set; }
+        [Column(TypeName = "nvarchar(100)")]
         public string City { get; set; }
         [Column(TypeName = "varchar(20)")]
         public string Phone { get; set; }
+
+        public string? Roles { get; set; }
 
     }
 }
