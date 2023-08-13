@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cms.Data\Cms.Data.csproj" />
+    <ProjectReference Include="..\Cms.SharedLibrary\Cms.SharedLibrary.csproj" />
   </ItemGroup>
 
 </Project>

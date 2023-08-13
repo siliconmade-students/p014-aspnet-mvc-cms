@@ -45,8 +45,9 @@ public static class DbSeeder
 			var userFaker = new Faker<User>()
 				.RuleFor(u => u.Email, f => f.Internet.Email())
 				.RuleFor(u => u.Password, f => f.Internet.Password())
-				.RuleFor(u => u.Name, f => f.Person.FullName)
-				.RuleFor(u => u.City, f => f.Address.City())
+				.RuleFor(u => u.Name, f => f.Person.FirstName)
+                .RuleFor(u => u.Surname, f => f.Person.LastName)
+                .RuleFor(u => u.City, f => f.Address.City())
 				.RuleFor(u => u.Phone, f => f.Phone.PhoneNumber("###-###-####"));
 
 			var users = userFaker.Generate(10);

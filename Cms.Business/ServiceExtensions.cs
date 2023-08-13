@@ -4,6 +4,9 @@ using Cms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Cms.SharedLibrary.Email;
+using Cms.SharedLibrary.Email.Interfaces;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +22,36 @@ namespace Cms.Business
             services.AddDbContext<AppDbContext>(o =>
             {
                 // appSettings.json içerisindeki Default bağlantı metnini almayı sağlar.
-                string connectionString = configuration.GetConnectionString("Default");
+                string connectionString = configuration.GetConnectionString("DefaultMac");
                 o.UseSqlServer(connectionString);
             });
             services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<IDoctorService, DoctorService>();
             services.AddTransient<IPostService, PostService>();
 
+            if (configuration["App:MailServer"] == "Smtp")
+            {
+                services.AddSingleton<IEmailService, SmtpEmailService>();
+            }
+            else if (configuration["App:MailServer"] == "Gmail")
+            {
+                services.AddSingleton<IEmailService, GmailEmailService>();
+            }
+            else if (configuration["App:MailServer"] == "MailTrap")
+            {
+                services.AddSingleton<IEmailService, MailTrapEmailService>();
+            }
+            else
+            {
+                services.AddSingleton<IEmailService, MailTrapEmailService>();
+            }
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddTransient<IUserService, UserService>();
         }
+
+
 
         public static void EnsureCreated(this IServiceScope scope)
         {

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+DYEB2bufT5KLQT+h346UWU2zduf1ff9svRCE7FYwoAMdPO1tvfSCq1V0b1U+vVcaVvgknTfXeGiohXt0a6v6Q==",
+  "success": true,
+  "projectFilePath": "/Users/aliburhanguncan/Desktop/proje/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
+  "expectedPackageFiles": [
+    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

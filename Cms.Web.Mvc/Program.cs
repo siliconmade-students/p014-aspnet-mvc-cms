@@ -1,5 +1,7 @@
 using Cms.Business;
 using Cms.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Cms.SharedLibrary.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddBusinessServices(builder.Configuration);
 
+builder.Services
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(o =>
+    {
+        o.Cookie.Name = "Siliconmade.Cookie";
+        o.LoginPath = "/Auth/Login";
+        o.AccessDeniedPath = "/Auth/AccessDenied";
+    });
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email:MailTrap"));
 
 var app = builder.Build();
 
@@ -28,6 +40,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cms.Data", "Cms.Data\Cms.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cms.Business", "Cms.Business\Cms.Business.csproj", "{8B63382C-124F-4686-8FAA-BE5BDCA083AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cms.SharedLibrary", "Cms.SharedLibrary\Cms.SharedLibrary.csproj", "{531B092E-829C-4DE0-AD0C-F767497CE0AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B63382C-124F-4686-8FAA-BE5BDCA083AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531B092E-829C-4DE0-AD0C-F767497CE0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531B092E-829C-4DE0-AD0C-F767497CE0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531B092E-829C-4DE0-AD0C-F767497CE0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531B092E-829C-4DE0-AD0C-F767497CE0AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
