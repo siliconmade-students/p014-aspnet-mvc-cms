@@ -21,6 +21,7 @@ namespace Cms.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Appoinment> Appoinments { get; set; }
 
         // Fluent API a geçiş yapılmalı
 

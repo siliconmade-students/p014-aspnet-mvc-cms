@@ -7,32 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cms.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cms.Business.Services
 {
-    public class DepartmentService : IDepartmentService
+    public class DoctorService : IDoctorService
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
 
-        public DepartmentService(AppDbContext context, IMapper mapper)
+        public DoctorService(AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public List<DepartmentDto> GetAll()
+        public List<DoctorDto> GetAll()
         {
-            var entities = _context.Departments.ToList();
+            var entities = _context.Doctors.Include(e => e.Department).ToList();
 
-            return _mapper.Map<List<DepartmentDto>>(entities);
+            return _mapper.Map<List<DoctorDto>>(entities);
         }
 
-        public DepartmentDto GetById(int id)
+        public DoctorDto GetById(int id)
         {
-            var entity = _context.Departments.FirstOrDefault(e => e.Id == id);
+            var entity = _context.Doctors.FirstOrDefault(e => e.Id == id);
 
-            return _mapper.Map<DepartmentDto>(entity);
+            return _mapper.Map<DoctorDto>(entity);
         }
-    }
+		public List<DoctorDto> GetByDepartmentId(int id)
+		{
+			var entities = _context.Doctors.Where(e => e.DepartmentId == id).ToList();
+
+			return _mapper.Map<List<DoctorDto>>(entities);
+		}
+	}
 }
