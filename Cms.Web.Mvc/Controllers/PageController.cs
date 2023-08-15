@@ -4,7 +4,13 @@ namespace Cms.Web.Mvc.Controllers
 {
     public class PageController : Controller
     {
-        public IActionResult Detail(int id)
+        [Route("AboutUs")]
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+        [Route("Contact")]
+        public IActionResult Contact()
         {
             return View();
         }

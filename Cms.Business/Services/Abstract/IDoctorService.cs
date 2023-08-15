@@ -10,5 +10,7 @@ namespace Cms.Business.Services.Abstract
 	public interface IDoctorService
 	{
 		List<DoctorDto> GetAll();
+		DoctorDto GetById(int id);
+		List<DoctorDto> GetByDepartmentId(int departmentId);
 	}
 }

@@ -22,6 +22,7 @@ namespace Cms.Business
             services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<IDoctorService, DoctorService>();
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IAppoinmentService, AppoinmentService>();
 
             services.AddSingleton<IEmailService, EmailService>();
 

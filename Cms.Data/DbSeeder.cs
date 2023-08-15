@@ -12,12 +12,12 @@ public static class DbSeeder
         {
             var departments = new List<Department>
             {
-                new(){ Name="Genel Cerrahi", Description="Genel Cerrahi açıklaması",Slug="genel_cerrahi", CoverImagePath = "service-1.jpg"},
-                new(){ Name="Dahiliye", Description="Dahiliye açıklaması",Slug ="dahiliye", CoverImagePath = "service-2.jpg"},
-                new(){ Name="Göğüs cerrahisi", Description="Göğüs cerrahisi açıklaması", Slug="gogus_cerrahisi", CoverImagePath = "service-3.jpg"},
-                new(){ Name="Acil tıp", Description="Acil tıp açıklaması", Slug="acil_tip", CoverImagePath = "service-4.jpg"},
-                new(){ Name="Pediatri", Description="Pediatri açıklaması", Slug="pediatri", CoverImagePath = "service-5.jpg"},
-                new(){ Name="Jinekoloji", Description="jinekoloji açıklaması", Slug="jinekoloji", CoverImagePath = "service-6.jpg"},
+                new(){ Name="Genel Cerrahi", Description="Genel Cerrahi açıklaması",Slug="genel_cerrahi", CoverImagePath = "service-1.jpg", Content="denemeasd"},
+                new(){ Name="Dahiliye", Description="Dahiliye açıklaması",Slug ="dahiliye", CoverImagePath = "service-2.jpg", Content="denemeasd"},
+                new(){ Name="Göğüs cerrahisi", Description="Göğüs cerrahisi açıklaması", Slug="gogus_cerrahisi", CoverImagePath = "service-3.jpg", Content="denemeasd"},
+                new(){ Name="Acil tıp", Description="Acil tıp açıklaması", Slug="acil_tip", CoverImagePath = "service-4.jpg", Content="denemeasd"},
+                new(){ Name="Pediatri", Description="Pediatri açıklaması", Slug="pediatri", CoverImagePath = "service-5.jpg", Content="denemeasd"},
+                new(){ Name="Jinekoloji", Description="jinekoloji açıklaması", Slug="jinekoloji", CoverImagePath = "service-6.jpg", Content="denemeasd",},
             };
             departmentsCopy = departments;
             _db.Departments.AddRange(departments);

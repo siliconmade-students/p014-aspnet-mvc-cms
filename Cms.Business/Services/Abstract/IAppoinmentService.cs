@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Cms.Business.Services.Abstract
 {
-    public interface IDepartmentService
-    {
-        List<DepartmentDto> GetAll();
-        DepartmentDto GetByDepartmentSlug(string slug);
-
+	public interface IAppoinmentService
+	{
+		void Create(AppoinmentDto appoinment);
 	}
 }

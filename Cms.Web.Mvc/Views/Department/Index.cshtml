@@ -1,85 +1,27 @@
-﻿<section class="section-padding">
-    <div class="container">
-        <div class="row cols-lg-6 row-cols-md-4 cols-sm-2">
-
-            <div class="col px-2">
-                <div class="post">
-                    <div class="post-title ">Title</div>
-                    <div class="post-categories">
-                        <a class="post-category" href="#">Genel Cerrahi</a>
-                        <a class="post-category" href="#">Acil tıp</a>
-                    </div>
-                    <img class="post-image" src="~/images/logo.png">
-                    </img>
-                    <div class="post-content">
-                    Lorem ipsum dolor sit amet. Lal edeh kel gulmen gal. afterwards the boxes height should be auto dırıttın
-                    </div>
-                    <div class="post-bottom">
-                        <div class="post-date">19.Jan.2020</div>
-                        <a href="#" class="post-button btn btn-secondary">Go ></a>
-                    </div>
-                </div>
+﻿@model List<DepartmentDto>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 text-center">
+            <div class="section-title">
+                <h2>Ödüllü hasta bakım hizmeti</h2>
+                <div class="divider mx-auto my-4"></div>
+                <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
             </div>
-
-
-            <div class="col px-2">
-                <div class="post">
-                    <div class="post-title ">Title</div>
-                    <div class="post-categories">
-                        <a class="post-category" href="#">Genel Cerrahi</a>
-                        <a class="post-category" href="#">Acil tıp</a>
-                    </div>
-                    <img class="post-image" src="~/images/logo.png">
-                    </img>
-                    <div class="post-content">
-                        Lorem ipsum dolor sit amet. Lal edeh kel gulmen gal. afterwards the boxes height should be auto dırıttın
-                    </div>
-                    <div class="post-bottom">
-                        <div class="post-date">19.Jan.2020</div>
-                        <a href="#" class="post-button btn btn-secondary">Go ></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col px-2">
-                <div class="post">
-                    <div class="post-title ">Title</div>
-                    <div class="post-categories">
-                        <a class="post-category" href="#">Genel Cerrahi</a>
-                        <a class="post-category" href="#">Acil tıp</a>
-                    </div>
-                    <img class="post-image" src="~/images/logo.png">
-                    </img>
-                    <div class="post-content">
-                        Lorem ipsum dolor sit amet. Lal edeh kel gulmen gal. afterwards the boxes height should be auto dırıttın
-                    </div>
-                    <div class="post-bottom">
-                        <div class="post-date">19.Jan.2020</div>
-                        <a href="#" class="post-button btn btn-secondary">Go ></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col px-2">
-                <div class="post">
-                    <div class="post-title ">İd dolorem tempora praesentium dolore sit.</div>
-                    <div class="post-categories">
-                        <a class="post-category" href="#">Genel Cerrahi</a>
-                        <a class="post-category" href="#">Acil tıp</a>
-                    </div>
-                    <img class="post-image" src="~/images/logo.png">
-                    </img>
-                    <div class="post-content">
-                        Lorem ipsum dolor sit amet. Lal edeh kel gulmen gal. afterwards the boxes height should be auto dırıttın
-                    </div>
-                    <div class="post-bottom">
-                        <div class="post-date">19.Jan.2020</div>
-                        <a href="#" class="post-button btn btn-secondary">Go ></a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
-</section>
+    <div class="row">
+        @foreach (var dp in Model)
+        {
+
+                        <div class="col-lg-4 col-md-6 ">
+                            <div class="department-block mb-5">
+                                <img src="images/service/@dp.CoverImagePath" alt="" class="img-fluid w-100">
+                                <div class="content">
+                                    <h4 class="mt-4 mb-2 title-color">@dp.Name</h4>
+                                    <p class="mb-4">@dp.Description</p>
+                                        <a asp-controller="Department" asp-action="@dp.Slug" class="read-more">Daha fazla  <i class="icofont-simple-right ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+        }
+        </div>
