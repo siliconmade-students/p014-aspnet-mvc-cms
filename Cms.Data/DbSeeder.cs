@@ -108,13 +108,17 @@ public static class DbSeeder
 
         if (!_db.Doctors.Any())
         {
+			var imgPaths = new string[] { "1.jpg", "2.jpg", "3.jpg", "4.jpg", "test-thumb1.jpg", "test-thumb2.jpg", "test-thumb3.jpg", "test-thumb4.jpg", };
+
             var doctorFaker = new Faker<Doctor>()
                 .RuleFor(s => s.Name, f => f.Name.FirstName())
                 .RuleFor(s => s.Surname, f => f.Name.LastName())
-                .RuleFor(s => s.DepartmentId, f => f.Random.Int(1, departmentsCopy.Count()));
-
+                .RuleFor(s => s.DepartmentId, f => f.Random.Int(1, departmentsCopy.Count()))
+                .RuleFor(s => s.ImagePath, f => f.PickRandom<string>(imgPaths))
+                .RuleFor(s => s.Content, f => f.Lorem.Text());
+                
             var doctors = doctorFaker.Generate(10);
-
+            
             _db.Doctors.AddRange(doctors);
             _db.SaveChanges();
         }

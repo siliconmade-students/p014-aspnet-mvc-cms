@@ -10,5 +10,7 @@ namespace Cms.Data.Entity
         public string? Content { get; set; }
         public Department? Department { get; set; }
         public int? DepartmentId { get; set; }
+
+        public string ImagePath { get; set; }
     }
 }
