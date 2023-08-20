@@ -31,13 +31,13 @@ namespace Cms.Business.Services
 
         public DoctorDto GetById(int id)
         {
-            var entity = _context.Doctors.FirstOrDefault(e => e.Id == id);
+            var entity = _context.Doctors.Include(e => e.Department).FirstOrDefault(e => e.Id == id);
 
             return _mapper.Map<DoctorDto>(entity);
         }
 		public List<DoctorDto> GetByDepartmentId(int id)
 		{
-			var entities = _context.Doctors.Where(e => e.DepartmentId == id).ToList();
+			var entities = _context.Doctors.Where(e => e.DepartmentId == id).Include(e => e.Department).ToList();
 
 			return _mapper.Map<List<DoctorDto>>(entities);
 		}

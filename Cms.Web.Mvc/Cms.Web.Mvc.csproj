@@ -23,4 +23,13 @@
     </ProjectReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Areas\Admin\Views\_ViewImports.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Admin\Views\_ViewStart.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
