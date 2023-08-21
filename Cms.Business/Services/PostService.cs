@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Azure;
 using Cms.Business.Dtos;
 using Cms.Business.Services.Abstract;
 using Cms.Data;
+using Cms.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cms.Business.Services
@@ -18,9 +20,15 @@ namespace Cms.Business.Services
         }
         public List<PostDto> GetAll(int page = 1)
         {
-            var posts = _context.Posts.Skip((page - 1) * 10).Take(10).Include(e => e.User).Include(e => e.Departments).ToList();
+            var posts = _context.Posts.Skip((page - 1) * 10).Take(10).Include(e => e.User).Include(e => e.Departments).Include(e=> e.PostImage).Include(e=> e.Comments).ToList();
 
             return _mapper.Map<List<PostDto>>(posts);
+        }
+
+        public PostDto GetById(int id) {
+            return _mapper.Map<PostDto>(
+                _context.Posts.Include(e => e.User).Include(e => e.Departments).Include(e => e.PostImage).Include(e => e.Comments).ThenInclude(c=>c.User).FirstOrDefault(e=>e.Id==id)
+                );
         }
 
         public List<PostDto> GetByDepartmentSlug(string slug, int page = 1)

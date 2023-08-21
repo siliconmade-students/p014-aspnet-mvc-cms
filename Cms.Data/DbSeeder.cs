@@ -53,6 +53,8 @@ public static class DbSeeder
             _db.SaveChanges();
         }
 
+        
+
         if (!_db.Posts.Any())
         {
             var postFaker = new Faker<Post>()
@@ -61,7 +63,7 @@ public static class DbSeeder
                 .RuleFor(p => p.UserId, f => f.Random.Number(1, 10))
                 .RuleFor(p => p.Departments, f => f.PickRandom(_db.Departments.ToList(), f.Random.Number(1, 3)).ToList());
 
-            var posts = postFaker.Generate(10);
+            var posts = postFaker.Generate(55);
 
             _db.Posts.AddRange(posts);
             _db.SaveChanges();
@@ -75,7 +77,7 @@ public static class DbSeeder
                 .RuleFor(pc => pc.Comment, f => f.Lorem.Sentence())
                 .RuleFor(pc => pc.IsActive, f => f.Random.Bool());
 
-            var postComments = postCommentFaker.Generate(10);
+            var postComments = postCommentFaker.Generate(50);
 
             _db.PostComments.AddRange(postComments);
             _db.SaveChanges();
@@ -83,12 +85,17 @@ public static class DbSeeder
 
         if (!_db.PostImages.Any())
         {
+            var imgPaths = new string[] { "blog-1.jpg", "blog-2.jpg", "blog-6.jpg", "blog-4.jpg", "blog-7.jpg", "blog-8.jpg", "testimonial1.jpg", "testimonial2.jpg", };
             var postImageFaker = new Faker<PostImage>()
-                .RuleFor(pi => pi.PostId, f => f.Random.Number(1, 10))
-                .RuleFor(pi => pi.ImagePath, f => f.Image.PicsumUrl());
-
-            var postImages = postImageFaker.Generate(10);
-
+                .RuleFor(pi => pi.ImagePath, f => f.PickRandom<string>(imgPaths));
+            var postImages = new List<PostImage>();
+            
+            for (var i = 1; i <= 50; i++)
+            {
+                var p = postImageFaker.Generate();
+                p.PostId = i;
+                postImages.Add(p);
+            }
             _db.PostImages.AddRange(postImages);
             _db.SaveChanges();
         }

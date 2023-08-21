@@ -53,9 +53,13 @@ namespace Cms.Web.Mvc.Controllers
 			_appoinmentService.Create(new() { DepartmentDtotId = vm.Department, DoctorDtoId = vm.Doctor, Date = vm.Date, Time = vm.Time, Name = vm.Name,phoneNumber = vm.phoneNumber, Email = vm.Email ,Content = vm.Content});
 
 
-			return Redirect("/");
+			return RedirectToAction(nameof(Confirmation));
 		}
 
+
+		public IActionResult Confirmation()
+		=> View();
+		
 
 		[HttpGet]
 		[Route("{controller}/GetDoctors/{id}")]

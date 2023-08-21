@@ -1,0 +1,169 @@
+﻿@model PostDto
+<section class="section blog-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12 mb-5">
+                        <div class="single-blog-item">
+                            <img src="~/images/blog/@Model.PostImageDto.ImagePath" alt="" class="img-fluid">
+
+                            <div class="blog-item-content mt-5">
+                                <div class="blog-item-meta mb-3">
+                                    <span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>@Model.Comments.Count Comments</span>
+                                    <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-2"></i>@Model.CreatedAt.ToShortDateString()</span>
+                                </div>
+
+                                <h2 class="mb-4 text-md">@Model.Title</h2>
+                                <p>
+                                    @Model.Content
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="comment-area mt-4 mb-5">
+                            @if (@Model.Comments != null)
+                            {
+                                <h4 class="mb-4">@Model.Comments.Count Comments </h4>
+                                <ul class="comment-tree list-unstyled">
+                                    @foreach (var c in Model.Comments)
+                                    {
+                                        <li class="mb-5">
+                                            <div class="comment-area-box d-block d-sm-flex">
+
+                                                @*<div class="comment-thumb">
+                                        <img alt="" src="@c.UserDto.ImagePath" style="width: 70px">
+                                        </div>*@
+
+                                                <div class="block">
+
+                                                    <div class="comment-info">
+                                                        <h5 class="mb-1">@c.UserDto.Name @*@c.UserDto*@</h5>
+                                                        <span>@c.UserDto.City</span>
+                                                        <span class="date-comm">| Posted @c.CreatedAt.ToShortDateString()</span>
+                                                    </div>
+
+                                                    <div class="comment-content mt-3">
+                                                        <p>
+                                                            @c.Comment
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <h4 class="mb-4">There is no comments </h4>
+                            }
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12">
+                        <form class="comment-form my-5" id="comment-form">
+                            <h4 class="mb-4">Write a comment</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="name" id="name" placeholder="Name:">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="mail" id="mail" placeholder="Email:">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="Comment"></textarea>
+
+                            <input class="btn btn-main-2 btn-round-full" type="submit" name="submit-contact" id="submit_contact" value="Submit Message">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-wrap pl-lg-4 mt-5 mt-lg-0">
+                    <div class="sidebar-widget search  mb-3 ">
+                        <h5>Search Here</h5>
+                        <form action="#" class="search-form">
+                            <input type="text" class="form-control" placeholder="search">
+                            <i class="ti-search"></i>
+                        </form>
+                    </div>
+
+
+                    <div class="sidebar-widget latest-post mb-3">
+                        <h5>Popular Posts</h5>
+
+                        <div class="py-2">
+                            <span class="text-sm text-muted">03 Mar 2018</span>
+                            <h6 class="my-2"><a href="#">Thoughtful living in los Angeles</a></h6>
+                        </div>
+
+                        <div class="py-2">
+                            <span class="text-sm text-muted">03 Mar 2018</span>
+                            <h6 class="my-2"><a href="#">Vivamus molestie gravida turpis.</a></h6>
+                        </div>
+
+                        <div class="py-2">
+                            <span class="text-sm text-muted">03 Mar 2018</span>
+                            <h6 class="my-2"><a href="#">Fusce lobortis lorem at ipsum semper sagittis</a></h6>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget category mb-3">
+                        <h5 class="mb-4">Departments</h5>
+
+                        <ul class="list-unstyled">
+                            <li class="align-items-center">
+                                <a href="#">Medicine</a>
+                                <span>(14)</span>
+                            </li>
+                            <li class="align-items-center">
+                                <a href="#">Equipments</a>
+                                <span>(2)</span>
+                            </li>
+                            <li class="align-items-center">
+                                <a href="#">Heart</a>
+                                <span>(10)</span>
+                            </li>
+                            <li class="align-items-center">
+                                <a href="#">Free counselling</a>
+                                <span>(5)</span>
+                            </li>
+                            <li class="align-items-center">
+                                <a href="#">Lab test</a>
+                                <span>(5)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="sidebar-widget tags mb-3">
+                        <h5 class="mb-4">Tags</h5>
+
+                        <a href="#">Doctors</a>
+                        <a href="#">agency</a>
+                        <a href="#">company</a>
+                        <a href="#">medicine</a>
+                        <a href="#">surgery</a>
+                        <a href="#">Marketing</a>
+                        <a href="#">Social Media</a>
+                        <a href="#">Branding</a>
+                        <a href="#">Laboratory</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -5,10 +5,9 @@ namespace Cms.Data.Entity
 {
     public class PostImage : AuditEntity
     {
-        public int PostId { get; set; }
-        public Post Post { get; set; }
-
         [MaxLength(400)]
         public string ImagePath { get; set; }
+        public int PostId { get; set; }
+        public Post Post { get; set; }
     }
 }
