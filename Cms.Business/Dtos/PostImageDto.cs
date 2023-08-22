@@ -13,7 +13,7 @@ namespace Cms.Business.Dtos
 
     public class PostImageDto : AuditDto
     {
-        public int PostDtoId { get; set; }
+        //public int PostDtoId { get; set; }
         public PostDto PostDto { get; set; }
 
         [MaxLength(400)]

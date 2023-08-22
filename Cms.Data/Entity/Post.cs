@@ -19,7 +19,7 @@ namespace Cms.Data.Entity
         public List<Department>? Departments { get; set; }
         public List<PostComment>? Comments { get; set; }
 
-        //public int PostImageId { get; set; }
+        public int PostImageId { get; set; }
         public PostImage? PostImage { get; set; } 
 
     }

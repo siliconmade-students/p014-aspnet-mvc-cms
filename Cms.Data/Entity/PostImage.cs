@@ -7,7 +7,7 @@ namespace Cms.Data.Entity
     {
         [MaxLength(400)]
         public string ImagePath { get; set; }
-        public int PostId { get; set; }
+        //public int PostId { get; set; }
         public Post Post { get; set; }
     }
 }

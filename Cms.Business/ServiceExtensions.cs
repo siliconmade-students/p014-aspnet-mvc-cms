@@ -23,12 +23,13 @@ namespace Cms.Business
             services.AddTransient<IDoctorService, DoctorService>();
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IAppoinmentService, AppoinmentService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICommentService, CommentService>();
 
             services.AddSingleton<IEmailService, EmailService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddTransient<IUserService, UserService>();
         }
 
         public static void EnsureCreated(this IServiceScope scope)

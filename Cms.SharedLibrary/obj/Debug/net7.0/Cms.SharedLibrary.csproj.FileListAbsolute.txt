@@ -58,3 +58,15 @@ C:\Users\Kerem\Desktop\Yazılım\Bitirme\p014-aspnet-mvc-cms\Cms.SharedLibrary\o
 C:\Users\Kerem\Desktop\Yazılım\Bitirme\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\refint\Cms.SharedLibrary.dll
 C:\Users\Kerem\Desktop\Yazılım\Bitirme\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.pdb
 C:\Users\Kerem\Desktop\Yazılım\Bitirme\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\ref\Cms.SharedLibrary.dll
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.deps.json
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.dll
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.pdb
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.csproj.AssemblyReference.cache
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.AssemblyInfoInputs.cache
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.AssemblyInfo.cs
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.dll
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\refint\Cms.SharedLibrary.dll
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.pdb
+C:\Users\Kerem\Desktop\Yazılım\asd\p014-aspnet-mvc-cms\Cms.SharedLibrary\obj\Debug\net7.0\ref\Cms.SharedLibrary.dll
