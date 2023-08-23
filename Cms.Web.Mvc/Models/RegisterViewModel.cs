@@ -25,6 +25,7 @@ namespace Cms.Web.Mvc.Models
         public string City { get; set; }
 
         public string Phone { get; set; }
+        public string Roles { get; set; }
 
     }
 }

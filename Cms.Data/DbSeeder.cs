@@ -55,10 +55,12 @@ public static class DbSeeder
 
         if (!_db.Posts.Any())
         {
+            var users = _db.Users.ToList();
+
             var postFaker = new Faker<Post>()
                 .RuleFor(p => p.Title, f => f.Lorem.Sentence())
                 .RuleFor(p => p.Content, f => f.Lorem.Paragraphs(5))
-                .RuleFor(p => p.UserId, f => f.Random.Number(1, 10))
+                .RuleFor(p => p.User, f => f.PickRandom(users))
                 .RuleFor(p => p.Departments, f => f.PickRandom(_db.Departments.ToList(), f.Random.Number(1, 3)).ToList());
 
             var posts = postFaker.Generate(10);
