@@ -2,7 +2,7 @@
 
 namespace Cms.Business.Dtos.Abstract
 {
-    public abstract class AuditDto
+    public abstract class AuditDto : BaseDto
     {
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;

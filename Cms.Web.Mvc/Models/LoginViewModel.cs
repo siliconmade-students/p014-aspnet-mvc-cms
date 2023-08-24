@@ -13,5 +13,6 @@ namespace Cms.Web.Mvc.Models
         [DataType(DataType.Password)]
         public string? Password { get; set; }
         public bool RememberMe { get; set; }
+        public string? Roles { get; set; }
     }
 }

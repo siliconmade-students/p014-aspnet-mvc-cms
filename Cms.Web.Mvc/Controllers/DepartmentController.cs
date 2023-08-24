@@ -23,12 +23,5 @@ namespace Cms.Web.Mvc.Controllers
         {
 			return View(_departmentService.GetByDepartmentSlug(slug));
 		}
-
-        public IActionResult Filter(string slug, int page =1 )
-        {
-            return View();
-        }
-
-        
     }
 }

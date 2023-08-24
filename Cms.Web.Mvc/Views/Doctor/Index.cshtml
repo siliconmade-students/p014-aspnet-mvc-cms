@@ -1,0 +1,48 @@
+﻿@model DoctorViewModel
+<!-- portfolio -->
+<section class="section doctors">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-6 text-center">
+				<div class="section-title">
+					<h2>Doktorlar</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Sizlere çok fazla alandan doktorlar sunuyoruz. Autem maxime rem modi eaque, voluptate. Beatae officiis neque </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 text-center  mb-5">
+			<div class="btn-group btn-group-toggle " data-toggle="buttons">
+				<label class="btn active ">
+					<input type="radio" name="shuffle-filter" value="all" checked="checked" />Tüm Departmanlar
+				</label>
+				@foreach(var item in Model.Departments){
+				<label class="btn ">
+					<input type="radio" name="shuffle-filter" value="@item.Slug" />@item.Name
+				</label>
+				}
+
+			</div>
+		</div>
+
+		<div class="row shuffle-wrapper portfolio-gallery">
+			@foreach(var item in Model.Doctors){
+			<div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;@(@item.DepartmentDto.Slug)&quot;]">
+				<div class="position-relative doctor-inner-box">
+					<div class="doctor-profile">
+						<div class="doctor-img">
+								<img src="~/images/team/@item.ImagePath" alt="doctor-image" class="img-fluid w-100">
+						</div>
+					</div>
+					<div class="content mt-3">
+						<h4 class="mb-0"><a asp-controller="doctor" asp-action="single" asp-route-id="@item.Id">@item.Name @item.Surname</a></h4>
+						<p>@item.DepartmentDto.Name</p>
+					</div>
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+</section>
+<!-- /portfolio -->

@@ -52,6 +52,16 @@
                     <span class="text-danger" asp-validation-for="Phone"></span>
                 </div>
 
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-select" id="role" name="Roles" asp-for="Roles" required>
+                        <option value="" disabled selected>Select a role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+                    <span class="text-danger"></span>
+                    </div>
+
                 <button class="btn btn-primary solid blank mt-1 mb-3" type="submit">Sign Up</button>
 
             </form>

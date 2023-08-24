@@ -10,4 +10,5 @@ public class DoctorDto : BaseDto
     public string? Content { get; set; }
     public DepartmentDto DepartmentDto { get; set; }
     public int DepartmentDtoId { get; set; }
+	public string ImagePath { get; set; }
 }

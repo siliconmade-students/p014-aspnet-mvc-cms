@@ -1,4 +1,5 @@
 ﻿using Cms.Business.Dtos.Abstract;
+using Cms.Data.Entity;
 
 namespace Cms.Business.Dtos
 {
@@ -10,5 +11,9 @@ namespace Cms.Business.Dtos
         public string Content { get; set; }
 
         public List<DepartmentDto>? Departments { get; set; }
+        public List<PostCommentDto> Comments { get; set; }
+
+        public int PostImageDtoId { get; set; }
+        public PostImageDto? PostImageDto { get; set; }
     }
 }
