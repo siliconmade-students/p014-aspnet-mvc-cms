@@ -51,6 +51,7 @@ namespace Cms.Web.Mvc.Controllers
                     Surname = model.Surname,
                     City = model.City,
                     Phone = model.Phone,
+                    Roles = model.Roles,
                 };
                 _context.Users.Add(newUser);
                 _context.SaveChanges();
@@ -106,6 +107,11 @@ namespace Cms.Web.Mvc.Controllers
                     foreach (var role in roles)
                     {
                         claims.Add(new Claim(ClaimTypes.Role, role));
+                    }
+
+                    if (roles.Contains("Admin"))
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
                 }
 
