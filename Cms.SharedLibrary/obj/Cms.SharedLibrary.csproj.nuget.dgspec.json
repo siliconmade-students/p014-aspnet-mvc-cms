@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kerem\\Desktop\\Yazılım\\asd\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj": {}
+    "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kerem\\Desktop\\Yazılım\\asd\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj": {
+    "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kerem\\Desktop\\Yazılım\\asd\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj",
+        "projectUniqueName": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
         "projectName": "Cms.SharedLibrary",
-        "projectPath": "C:\\Users\\Kerem\\Desktop\\Yazılım\\asd\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj",
-        "packagesPath": "C:\\Users\\Kerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kerem\\Desktop\\Yazılım\\asd\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\obj\\",
+        "projectPath": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
+        "packagesPath": "/Users/aliburhanguncan/.nuget/packages/",
+        "outputPath": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/aliburhanguncan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
         }
       }
     }

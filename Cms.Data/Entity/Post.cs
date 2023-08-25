@@ -5,9 +5,9 @@ namespace Cms.Data.Entity
 {
     public class Post : AuditEntity
     {
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
-        public User User { get; set; }
+        public User? User { get; set; }
 
         [Column(TypeName = "nvarchar(200)")]
         public string Title { get; set; }
