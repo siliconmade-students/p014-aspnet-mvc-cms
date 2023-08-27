@@ -73,7 +73,7 @@ public static class DbSeeder
                 .RuleFor(p => p.Title, f => f.Lorem.Sentence())
                 .RuleFor(p => p.Content, f => f.Lorem.Paragraphs(5))
                 .RuleFor(p => p.User, f => f.PickRandom(users))
-                .RuleFor(p => p.Departments, f => f.PickRandom(_db.Departments.ToList(), f.Random.Number(1, 3)).ToList());
+                .RuleFor(p => p.Departments, f => f.PickRandom(_db.Departments.ToList(), f.Random.Number(1, 2)).ToList());
 
             var posts = postFaker.Generate(postCount);
 

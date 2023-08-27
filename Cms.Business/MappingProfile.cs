@@ -10,7 +10,6 @@ namespace Cms.Business
         {
             CreateMap<Department, DepartmentDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
-            //todo neden çalışmadığını anlamadım
             CreateMap<PostComment, PostCommentDto>().ForMember(e=>e.UserDtoId, e=>e.MapFrom(e2=>e2.UserId)).ForMember(e=>e.UserDto, e=>e.MapFrom(e2=> e2.User)).ForMember(e => e.PostDtoId, e => e.MapFrom(e2 => e2.PostId)).ForMember(e => e.PostDto, e => e.MapFrom(e2 => e2.Post)).ReverseMap();
 
             CreateMap<PostImage, PostImageDto>().ReverseMap();

@@ -27,11 +27,11 @@ namespace Cms.Web.Mvc.Models
         public PostImageDto? PostImageDto { get; set; }
 
 
-        [MinLength(3, ErrorMessage = "İsim en az 3 harf olabilir"),MaxLength(40, ErrorMessage = "İsim en fazla 40 harf olabilir"),Display( Prompt ="İsim")]
-        public string CommentName { get; set; }
+        //[MinLength(3, ErrorMessage = "İsim en az 3 harf olabilir"),MaxLength(40, ErrorMessage = "İsim en fazla 40 harf olabilir"),Display( Prompt ="İsim")]
+        //public string CommentName { get; set; }
         [MinLength(3, ErrorMessage = "Yorum en az 3 harf olabilir"),MaxLength(150, ErrorMessage = "Yorum en fazla 150 harf olabilir"), Display(Prompt = "Yorum")]
         public string Comment { get; set; }
-        [EmailAddress(ErrorMessage ="Lütfen geçerli bir E-mail giriniz"), Display(Prompt = "Email")]
-        public string CommentEmail { get; set; }
+        //[EmailAddress(ErrorMessage ="Lütfen geçerli bir E-mail giriniz"), Display(Prompt = "Email")]
+        //public string CommentEmail { get; set; }
     }
 }
