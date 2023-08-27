@@ -27,3 +27,4 @@
 # 27.08.2023
 - [ ] Blog sayfalarını türkçe kullanalım.
 - [ ] Auth saygfaları türkçe kullanalım.
+- [ ] Admin sayfaları tamamlanacak.
