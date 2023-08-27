@@ -1,17 +1,17 @@
 ﻿using Cms.Data.Entity.Abstract;
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cms.Data.Entity
 {
     public class Page : AuditEntity
     {
-        [Column(TypeName = "nvarchar(200)")]
+        [Unicode, MaxLength(200)]
         public string Title { get; set; }
 
-        [Column(TypeName = "text")]
+        [Unicode]
         public string Content { get; set; }
 
-        [Column(TypeName = "bit")]
         public bool IsActive { get; set; }
     }
 }

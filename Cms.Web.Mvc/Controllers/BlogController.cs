@@ -4,6 +4,7 @@ using Cms.Web.Mvc.Models;
 using Cms.Web.Mvc.Models.unused;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
+using System.Security.Claims;
 
 namespace Cms.Web.Mvc.Controllers
 {
@@ -11,41 +12,63 @@ namespace Cms.Web.Mvc.Controllers
     {
         private readonly IPostService _postService;
         private readonly ICommentService _commentService;
+        private readonly IDepartmentService _departmentService;
 
-        public BlogController(IPostService postService,ICommentService commentService)
+        public BlogController(IPostService postService, ICommentService commentService,IDepartmentService departmentService)
         {
             _postService = postService;
             _commentService = commentService;
+            _departmentService = departmentService;
         }
 
-        public IActionResult Index([FromQuery] int page = 1)
+        public IActionResult Index(int page = 1, string departman = null)
         {
-            return View(_postService.GetAll(page = page));
+            int maxPage = _postService.GetMaxPageCount(departman, true);
+            if (page > maxPage)
+            {
+                return Redirect("Blog?page=" + maxPage + "&departman=" + departman);
+            }
+            else if (page < 1)
+            {
+                return Redirect("Blog?page=" + 1 + "&departman=" + departman);
+            }
+            var departmanDto = new DepartmentDto();
+            if (departman!= null) {
+                departmanDto = _departmentService.GetByDepartmentSlug(departman);
+                ViewBag.departman = departmanDto;
+            }
+            ViewBag.currentPage = page;
+            ViewBag.maxPage = maxPage;
+            return View(_postService.GetAll(page,departmanDto.Slug));
         }
 
-        //todo Blog indexdeki sayfalar < 1 2 3 > ile değişebilmeli
-        //todo Departman ve tag ile post filtreleme eklenecek
-        //todo comment ekleme eklenmeli
+        //todo Departman ile post filtreleme eklenecek      
 
         public IActionResult Detail(int id)
         {
             var post = MapToVm(_postService.GetById(id));
-            
+
             return View(post);
         }
 
         [HttpPost]
         public IActionResult Detail(int id, BlogDetailViewModel vm)
         {
-            var post = MapToVm(_postService.GetById(id));
-            if (!ModelState.IsValid)
+            var post = new BlogDetailViewModel();
+            if (ModelState.IsValid)
             {
-                return View(post);
+                var comment = new PostCommentDto { Comment = vm.Comment, CreatedAt = DateTime.Now, IsActive = true, PostDtoId = id, UserDto = null };
+                if (HttpContext.User.Identity.IsAuthenticated)
+                {
+                    comment.UserDtoId = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                }
+
+                _commentService.Add(comment);
             }
 
-            //Comment ekleme işlemleri
-            _commentService.Add(new() { Comment = vm.Comment, CreatedAt = DateTime.Now, IsActive = true, PostDtoId = id, UserDto = null });
-            return View(post);
+            post = MapToVm(_postService.GetById(id));
+            post.Comment = vm.Comment;
+            return RedirectToAction(nameof(Detail));
         }
 
         private BlogDetailViewModel MapToVm(PostDto post)

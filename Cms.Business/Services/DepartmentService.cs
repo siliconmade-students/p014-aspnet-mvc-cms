@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cms.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cms.Business.Services
 {
@@ -23,7 +24,7 @@ namespace Cms.Business.Services
 
         public List<DepartmentDto> GetAll()
         {
-            var entities = _context.Departments.ToList();
+            var entities = _context.Departments.Include(e=>e.Posts).ToList();
 
             return _mapper.Map<List<DepartmentDto>>(entities);
         }
