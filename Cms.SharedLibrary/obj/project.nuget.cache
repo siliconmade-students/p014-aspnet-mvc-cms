@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "j7UjpOthKIaJcV5gLYDmaRllseS/KoE1sE+6maWhsRvh2DdEoHn/flfYYMp4EyMKM4Xz7mi8gi58Y5gJcighZg==",
+  "dgSpecHash": "6Y59GhwLeWll6GsQ9tOrLWayfJyZquhJZfL4b7ZJH8T8JUX2WSNB2u7kp7sXFb4/nmrkIr8QKfwx2MfTPkmQ7Q==",
   "success": true,
-  "projectFilePath": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
+  "projectFilePath": "C:\\Users\\PC\\source\\repos\\p014-aspnet-mvc-cms\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj",
   "expectedPackageFiles": [
-    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
-    "/Users/aliburhanguncan/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
