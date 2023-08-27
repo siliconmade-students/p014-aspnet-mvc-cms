@@ -1,0 +1,36 @@
+﻿@model Models.Post // Models.Post, projenizin Post model sınıfını temsil eder
+
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h2>Edit Post</h2>
+
+<form asp-controller="Admin" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <!-- Diğer form alanları -->
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SelectedCategories" class="control-label">Categories</label>
+        <select asp-for="SelectedCategories" asp-items="Model.AllCategories" class="form-control" multiple></select>
+        <span asp-validation-for="SelectedCategories" class="text-danger"></span>
+    </div>
+
+    <!-- Diğer alanlar için gerekli form gruplarını ekleyin -->
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="List" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

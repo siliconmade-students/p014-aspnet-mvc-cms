@@ -149,24 +149,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/aliburhanguncan/.nuget/packages/": {}
+    "C:\\Users\\mksmu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\mksmu\\Desktop\\CMS\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj",
       "projectName": "Cms.SharedLibrary",
-      "projectPath": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/Cms.SharedLibrary.csproj",
-      "packagesPath": "/Users/aliburhanguncan/.nuget/packages/",
-      "outputPath": "/Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/",
+      "projectPath": "C:\\Users\\mksmu\\Desktop\\CMS\\Cms.SharedLibrary\\Cms.SharedLibrary.csproj",
+      "packagesPath": "C:\\Users\\mksmu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mksmu\\Desktop\\CMS\\Cms.SharedLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/aliburhanguncan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mksmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -206,7 +208,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

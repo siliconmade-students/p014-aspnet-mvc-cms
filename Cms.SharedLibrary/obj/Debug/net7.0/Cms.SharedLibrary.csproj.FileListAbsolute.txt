@@ -82,3 +82,15 @@ C:/Users/Kerem/Desktop/Yazılım/asd/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/D
 /Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/refint/Cms.SharedLibrary.dll
 /Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/Cms.SharedLibrary.pdb
 /Users/aliburhanguncan/Desktop/proje2/p014-aspnet-mvc-cms/Cms.SharedLibrary/obj/Debug/net7.0/ref/Cms.SharedLibrary.dll
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.deps.json
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.dll
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\bin\Debug\net7.0\Cms.SharedLibrary.pdb
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.csproj.AssemblyReference.cache
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.AssemblyInfoInputs.cache
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.AssemblyInfo.cs
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.dll
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\refint\Cms.SharedLibrary.dll
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\Cms.SharedLibrary.pdb
+C:\Users\mksmu\Desktop\CMS\Cms.SharedLibrary\obj\Debug\net7.0\ref\Cms.SharedLibrary.dll

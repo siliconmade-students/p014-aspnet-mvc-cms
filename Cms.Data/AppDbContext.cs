@@ -22,6 +22,8 @@ namespace Cms.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appoinment> Appoinments { get; set; }
+        public IEnumerable<object> Category { get; set; }
+        public IEnumerable<object> Categories { get; set; }
 
         // Fluent API a geçiş yapılmalı
 

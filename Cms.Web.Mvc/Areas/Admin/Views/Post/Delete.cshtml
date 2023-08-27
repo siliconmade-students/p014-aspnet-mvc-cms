@@ -1,0 +1,14 @@
+﻿@model Models.Post // Models.Post, projenizin Post model sınıfını temsil eder
+
+@{
+    ViewData["Title"] = "Delete Post";
+}
+
+<h2>Delete Post</h2>
+
+<p>Gerçekten postu silmek istiyor musunuz?p>
+
+<form asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>
