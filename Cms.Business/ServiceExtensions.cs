@@ -25,6 +25,7 @@ namespace Cms.Business
             services.AddTransient<IAppoinmentService, AppoinmentService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<IPageService, PageService>();
 
             services.AddSingleton<IEmailService, EmailService>();
 
@@ -32,11 +33,11 @@ namespace Cms.Business
 
         }
 
-        public static void EnsureCreated(this IServiceScope scope)
+        public static void SeedDatabase(this IServiceScope scope)
         {
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-            //db.Database.EnsureDeleted();
+            db.Database.EnsureDeleted();
 
             db.Database.EnsureCreated();
 

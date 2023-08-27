@@ -26,6 +26,8 @@ public static class DbSeeder
 
         if (!_db.Pages.Any())
         {
+            _db.Pages.Add(new Page { Title = "Hakkımızda", Content = "Hakkımızda", CreatedAt = DateTime.Now, IsActive = true });
+
             var pageFaker = new Faker<Page>()
                 .RuleFor(p => p.Title, f => f.Company.CompanyName())
                 .RuleFor(p => p.Content, f => f.Lorem.Paragraphs(3))
@@ -77,9 +79,9 @@ public static class DbSeeder
 
             var posts = postFaker.Generate(postCount);
 
-            for (int i = postCount; i>0; i--)
+            for (int i = postCount; i > 0; i--)
             {
-                posts[i-1].PostImageId = i;
+                posts[i - 1].PostImageId = i;
             }
 
             _db.Posts.AddRange(posts);
@@ -94,7 +96,7 @@ public static class DbSeeder
                 .RuleFor(pc => pc.Comment, f => f.Lorem.Sentence())
                 .RuleFor(pc => pc.IsActive, f => f.Random.Bool());
 
-            var postComments = postCommentFaker.Generate(postCount*3);
+            var postComments = postCommentFaker.Generate(postCount * 3);
 
             _db.PostComments.AddRange(postComments);
             _db.SaveChanges();

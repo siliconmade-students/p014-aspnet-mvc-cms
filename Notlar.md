@@ -12,13 +12,18 @@
 
 # 13.08.2023
 
-- Sayfa içeriklerini Türkçe kullanalım. Menüler ve genel içerik.
-- Departmanlar altında Tüm Departmanlara tıklanınca tüm departmanlar listelenecek.
-    - Listelenen departmanlardan birine tıklanınca o departmanın detaylarını gösterecek.
-- Doktorlar menüsünde Tüm Doktorlara tıklanınca tüm doktorlar listelenecek.
-    - Listelenen doktorlardan birine tıklanınca o doktorun detay sayfasına gidecek.
+- [x] Sayfa içeriklerini Türkçe kullanalım. Menüler ve genel içerik.
+- [x] Departmanlar altında Tüm Departmanlara tıklanınca tüm departmanlar listelenecek.
+    - [x] Listelenen departmanlardan birine tıklanınca o departmanın detaylarını gösterecek.
+- [x] Doktorlar menüsünde Tüm Doktorlara tıklanınca tüm doktorlar listelenecek.
+    - [x] Listelenen doktorlardan birine tıklanınca o doktorun detay sayfasına gidecek.
 
-- Randevu formu tamamlanacak.
+- [x] Randevu formu tamamlanacak.
 
-- Blog menüsünde blog kategorileri listelenecek. O kategoriye tıklanınca o kategorideki yazılar gelecek. 
-    - Yazılardan Detay butonuna tıklanınca blog detay sayfası açılacak.
+- [x] Blog menüsünde blog kategorileri listelenecek. O kategoriye tıklanınca o kategorideki yazılar gelecek. 
+    - [x] Yazılardan Detay butonuna tıklanınca blog detay sayfası açılacak.
+
+
+# 27.08.2023
+- [ ] Blog sayfalarını türkçe kullanalım.
+- [ ] Auth saygfaları türkçe kullanalım.

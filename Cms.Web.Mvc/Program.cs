@@ -32,7 +32,7 @@ if (!app.Environment.IsDevelopment())
 
 using (var scope = app.Services.CreateScope())
 {
-    scope.EnsureCreated();
+    scope.SeedDatabase();
 }
 
 app.UseHttpsRedirection();
