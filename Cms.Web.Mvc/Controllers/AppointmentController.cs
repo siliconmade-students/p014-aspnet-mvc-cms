@@ -28,11 +28,11 @@ namespace Cms.Web.Mvc.Controllers
                 })
                 .ToList();
 
-            return View(new AppoinmentViewModel { Departments = departments });
+            return View(new AppointmentViewModel { Departments = departments });
         }
 
         [HttpPost]
-        public IActionResult Index(AppoinmentViewModel vm)
+        public IActionResult Index(AppointmentViewModel vm)
         {
             if (!ModelState.IsValid)
             {

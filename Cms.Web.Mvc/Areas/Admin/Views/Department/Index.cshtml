@@ -1,0 +1,29 @@
+﻿@model List<DepartmentDto>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Post sayısı</th>
+            <th scope="col">Doktor sorusu</th>
+            <th scope="col">Ayarlar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var d in Model){
+        <tr>
+            <th scope="row">@d.Id</th>
+            <td>@d.Name</td>
+            <td>@d.Description</td>
+            <td>@d.Posts.Count</td>
+            <td>@d.Doctors.Count</td>
+                <td><a asp-area="admin" asp-controller="Department" asp-action="Details" asp-route-id="@d.Id">Detay </a> | 
+                    <a asp-area="admin" asp-controller="Department" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> | 
+                    <a asp-area="admin" asp-controller="Department" asp-action="Delete" asp-route-id="@d.Id">Sil</a></td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
