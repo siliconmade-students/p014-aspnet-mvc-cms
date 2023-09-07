@@ -100,18 +100,14 @@ namespace Cms.Web.Mvc.Controllers
                         new Claim(ClaimTypes.Surname, user.Surname ?? ""),
                         new Claim(ClaimTypes.Email, model.EmailAddress)
                     };
-
+                bool isAdmin = false;
                 if (!string.IsNullOrEmpty(user.Roles))
                 {
                     string[] roles = user.Roles.Split(',');
                     foreach (var role in roles)
                     {
                         claims.Add(new Claim(ClaimTypes.Role, role));
-                    }
-
-                    if (roles.Contains("Admin"))
-                    {
-                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                        if (role == "Admin") isAdmin = true;
                     }
                 }
 
@@ -132,6 +128,11 @@ namespace Cms.Web.Mvc.Controllers
                         principal,
                         props
                     );
+
+                if (isAdmin)
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                }
 
                 return Redirect(returnUrl != "" ? returnUrl : "/");
             }

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cms.Web.Mvc.Models
 {
-	public class AppoinmentViewModel
+	public class AppointmentViewModel
 	{
 		[ValidateNever]
 		public List<SelectListItem> Departments { get; set; }

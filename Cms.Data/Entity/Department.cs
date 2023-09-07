@@ -15,7 +15,7 @@ namespace Cms.Data.Entity
         public string Content { get; set; }
 
         public string Slug { get; set; }
-        public string CoverImagePath { get; set; }
+        public string? CoverImagePath { get; set; }
 
         public List<Post>? Posts { get; set; }
         public List<Doctor>? Doctors { get; set; }

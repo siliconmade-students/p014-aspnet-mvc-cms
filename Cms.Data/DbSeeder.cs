@@ -50,7 +50,7 @@ public static class DbSeeder
                 .RuleFor(u => u.Phone, f => f.Phone.PhoneNumber("###-###-####"));
 
             var users = userFaker.Generate(10);
-
+            users.Add(new User() { Name="Admin", Email="admin@gmail.com", Password="admin", Roles="Admin", Surname="Admin", Phone="00000000", City="Ankara"});
             _db.Users.AddRange(users);
             _db.SaveChanges();
         }
