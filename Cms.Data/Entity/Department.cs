@@ -9,7 +9,7 @@ namespace Cms.Data.Entity
         public string Name { get; set; }
 
         [MaxLength(300)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [MaxLength(1000)]
         public string Content { get; set; }

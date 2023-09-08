@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cms.Web.Mvc.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    
     [Area("Admin")]
-
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly AppDbContext _context;
