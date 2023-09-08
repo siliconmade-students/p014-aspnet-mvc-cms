@@ -10,5 +10,8 @@ namespace Cms.Business.Services.Abstract
         List<PostDto> GetByDepartmentSlug(string categoryName, int page = 1);
         int GetMaxPageCount(string searchQuery = null, bool queryIsDepartment = false);
 
+        void Add(PostDto post);
+        bool Update(int id, PostDto post);
+        void Delete(int id);
     }
 }

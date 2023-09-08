@@ -1,0 +1,27 @@
+﻿@model List<PostDto>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Depatman</th>
+            <th scope="col">Ayarlar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var d in Model){
+        <tr>
+            <th scope="row">@d.Id</th>
+            <td>@d.Title</td>
+            <td>@d.User</td>
+            <td>@d.Departments</td>
+                <td><a asp-area="admin" asp-controller="Post" asp-action="Details" asp-route-id="@d.Id">Detay </a> | 
+                    <a asp-area="admin" asp-controller="Post" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> | 
+                    <a asp-area="admin" asp-controller="Post" asp-action="Delete" asp-route-id="@d.Id">Sil</a></td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
