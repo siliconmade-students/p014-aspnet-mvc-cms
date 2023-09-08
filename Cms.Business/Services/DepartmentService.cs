@@ -36,9 +36,9 @@ namespace Cms.Business.Services
 
             return _mapper.Map<DepartmentDto>(entity);
         }
-		public DepartmentDto GetByDepartmentSlug(string slug)
+        public DepartmentDto GetByDepartmentSlug(string slug)
         {
-			var entity = _context.Departments.FirstOrDefault(e => e.Slug == slug);
+            var entity = _context.Departments.FirstOrDefault(e => e.Slug == slug);
 
 			return _mapper.Map<DepartmentDto>(entity);
 		}

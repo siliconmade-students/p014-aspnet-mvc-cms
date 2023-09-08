@@ -1,4 +1,5 @@
 ﻿using Cms.Business.Dtos.Abstract;
+using Cms.Data.Entity;
 
 namespace Cms.Business.Dtos
 {
@@ -7,5 +8,7 @@ namespace Cms.Business.Dtos
         public string Title { get; set; }
         public string Content { get; set; }
         public bool IsActive { get; set; }
+
+        
     }
 }
