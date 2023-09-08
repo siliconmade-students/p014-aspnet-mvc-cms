@@ -20,7 +20,7 @@ namespace Cms.Data.Entity
         public List<PostComment>? Comments { get; set; }
 
         public int PostImageId { get; set; }
-        public PostImage? PostImage { get; set; } 
-
+        public PostImage? PostImage { get; set; }
+        
     }
 }

@@ -10,6 +10,7 @@ namespace Cms.Business.Dtos
         public string Title { get; set; }
         public string Content { get; set; }
 
+        
         public List<DepartmentDto>? Departments { get; set; }
         public List<PostCommentDto> Comments { get; set; }
 

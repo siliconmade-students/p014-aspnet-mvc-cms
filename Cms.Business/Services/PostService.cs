@@ -81,5 +81,32 @@ namespace Cms.Business.Services
 
 			return (int)Math.Ceiling(posts.Count / 10m);
 		}
+
+		public void Add(PostDto post)
+		{
+			_context.Add(_mapper.Map<Post>(post));
+			_context.SaveChanges();
+		}
+
+		public bool Update(int id, PostDto post)
+		{
+			var oldPost = _context.Posts.Find(id);
+
+			if (oldPost is null) return false;
+
+			//oldPost = _mapper.Map<Department>(post);
+			oldPost.Title = post.Title;
+			
+			oldPost.Content = post.Content;
+			_context.SaveChanges();
+
+			return true;
+		}
+		public void Delete(int id)
+		{
+			var post = _context.Posts.Find(id);
+			_context.Posts.Remove(post);
+			_context.SaveChanges();
+		}
 	}
 }
