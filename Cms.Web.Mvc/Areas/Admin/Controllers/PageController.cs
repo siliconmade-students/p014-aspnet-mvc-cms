@@ -53,6 +53,9 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
 
             return View(page);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, PageDto page) //todo slug ve content için de inputlar oluşturulacak
         {
             var succeeded = _pageService.Update(id, page);
