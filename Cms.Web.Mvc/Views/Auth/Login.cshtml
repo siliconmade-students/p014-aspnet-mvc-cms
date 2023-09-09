@@ -7,35 +7,35 @@
 <div class="container">
     <div class="row">
         <div class="col-4 offset-4">
-            <h1>Login</h1>
+            <h1>Giriş Yap </h1>
             <form asp-controller="Auth" asp-action="Login" method="post">
 
                 <span class="text-danger">@ViewBag.Message</span>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input class="form-control" asp-for="EmailAddress" id="email" type="email" required placeholder="name@example.com">
+                    <label asp-for="EmailAddress" class="form-label">Email</label>
+                    <input class="form-control" asp-for="EmailAddress"  type="email" required >
                     <span class="text-danger" asp-validation-for="EmailAddress"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input class="form-control" asp-for="Password" id="password" type="password" required placeholder="Password">
+                    <label asp-for="Password" class="form-label">Şifre</label>
+                    <input class="form-control" asp-for="Password"  type="password" required >
                     <span class="text-danger" asp-validation-for="Password"></span>
                 </div>
 
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" asp-for="RememberMe"> Remember me
+                        <input type="checkbox" asp-for="RememberMe"> Beni hatırla
                     </label>
                 </div>
 
                 <div>
-                    <button class="btn btn-primary solid blank mt-1 mb-3" type="submit">Login</button>
+                    <button class="btn btn-primary solid blank mt-1 mb-3" type="submit">Giriş</button>
                 </div>
 
                 <div>
-                    <a asp-controller="Auth" asp-action="ForgotPassword" class="link">Forgot Password</a>
+                    <a asp-controller="Auth" asp-action="ForgotPassword" class="link">Şifreni mi unuttun?</a>
                 </div>
 
                 <br />
