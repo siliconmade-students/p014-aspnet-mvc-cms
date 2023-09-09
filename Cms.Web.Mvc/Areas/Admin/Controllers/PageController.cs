@@ -33,7 +33,19 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
             return View();
         }
 
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(PageDto page)
+        {
+            if (ModelState.IsValid)
+            {
+                _pageService.Add(page);
+                return Redirect("/Admin/Department");
+            }
+            return View(page);
+        }
+
+
         public async Task<IActionResult> Edit(int id)
         {
             var page = _pageService.GetById(id);

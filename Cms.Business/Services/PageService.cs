@@ -74,14 +74,10 @@ namespace Cms.Business.Services
             
         }
 
-        void IPageService.Update(int id, PageDto page)
+        public void Add(PageDto page)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id, PageDto page)
-        {
-            throw new NotImplementedException();
+            _context.Pages.Add(_mapper.Map<Page>(page));
+            _context.SaveChanges();
         }
     }
 }

@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<PageDto>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">İçerik</th>
+            <th scope="col">Aktif mi?</th>
+            <th scope="col">Ayarlar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <th scope="row">@d.Id</th>
+                <td>@d.Title</td>
+                <td>@d.Content</td>
+                <td>@(d.IsActive?"Evet":"Hayır")</td>
+                <td>
+                    <a asp-area="admin" asp-controller="Page" asp-action="Details" asp-route-id="@d.Id">Detay </a> |
+                    <a asp-area="admin" asp-controller="Page" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> |
+                    <a asp-area="admin" asp-controller="Page" asp-action="Delete" asp-route-id="@d.Id">Sil</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
