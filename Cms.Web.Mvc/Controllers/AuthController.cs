@@ -98,7 +98,8 @@ namespace Cms.Web.Mvc.Controllers
                         new Claim(ClaimTypes.Name, user.Name ?? ""),
                         new Claim(ClaimTypes.GivenName, user.Name ?? ""),
                         new Claim(ClaimTypes.Surname, user.Surname ?? ""),
-                        new Claim(ClaimTypes.Email, model.EmailAddress)
+                        new Claim(ClaimTypes.Email, model.EmailAddress),
+                        new Claim("PhotoPath", user.PhotoPath ?? "")
                     };
                 bool isAdmin = false;
                 if (!string.IsNullOrEmpty(user.Roles))
