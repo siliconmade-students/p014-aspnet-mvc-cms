@@ -24,5 +24,7 @@ namespace Cms.Data.Entity
         public string Phone { get; set; }
 
         public string? Roles { get; set; }
+
+        public string? PhotoPath { get; set; }
     }
 }

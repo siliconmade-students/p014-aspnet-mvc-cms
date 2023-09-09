@@ -15,8 +15,12 @@
         <tr>
             <th scope="row">@d.Id</th>
             <td>@d.Title</td>
-            <td>@d.User</td>
-            <td>@d.Departments</td>
+            <td>@d.User.Name @d.User.Surname</td>
+               <td> @foreach (var c in d.Departments)
+                {
+                    <span class="me-2">@c.Name</span>
+                }
+                </td>
                 <td><a asp-area="admin" asp-controller="Post" asp-action="Details" asp-route-id="@d.Id">Detay </a> | 
                     <a asp-area="admin" asp-controller="Post" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> | 
                     <a asp-area="admin" asp-controller="Post" asp-action="Delete" asp-route-id="@d.Id">Sil</a></td>
