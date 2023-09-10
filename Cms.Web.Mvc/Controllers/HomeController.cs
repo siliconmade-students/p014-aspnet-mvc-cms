@@ -1,20 +1,27 @@
 ﻿using Cms.Web.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System.Configuration;
 using System.Diagnostics;
 
 namespace Cms.Web.Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly Statistics _statistics;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+		public HomeController(IOptions<Statistics> statistics)
+		{
+            _statistics = statistics.Value;
+		}
 
-        public IActionResult Index()
+		public IActionResult Index()
         {
+			ViewBag.Clients = _statistics.Clients;
+            ViewBag.Operations= _statistics.Operations;
+            ViewBag.Doctors= _statistics.Doctors;
+            ViewBag.YearsOfExperience = _statistics.YearsOfExperience;
+
             return View();
         }
 

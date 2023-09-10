@@ -39,8 +39,7 @@
                                 @if(Context.User.IsInRole("Admin")){
                                 <a class="dropdown-item"asp-area="Admin" asp-controller="home" asp-action="index">Admin sayfası</a>
                                 }
-                                <a class="dropdown-item" href="#">Profil</a>
-                                <a class="dropdown-item" href="#">Ayarlar</a>
+                                <a class="dropdown-item" asp-controller="user" asp-action="index">Profil</a>
                                 <a class="dropdown-item" asp-controller="Auth" asp-action="Logout">Çıkış yap</a>
                             </div>
                         </li>
