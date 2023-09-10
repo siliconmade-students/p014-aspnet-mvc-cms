@@ -7,18 +7,22 @@ namespace Cms.Web.Mvc.ViewComponents
 	public class FooterViewComponent : ViewComponent
 	{
 		private readonly IDepartmentService _departmentService;
-		public FooterViewComponent(IDepartmentService departmentService)
+		private readonly ISettingService _settingService;
+
+		public FooterViewComponent(IDepartmentService departmentService, ISettingService settingService)
 		{
 			_departmentService = departmentService;
-
+			_settingService = settingService;
 		}
-
 
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var departments = _departmentService.GetAll();
 
-			return View(new NavigationViewModel { DepartmentDtos = departments });
+			var settings = _settingService.GetAll();
+			//Model.Settings.FirstOrDefault(e=>e.Name == SettingConstants.Telefon).Value;
+
+			return View(new NavigationViewModel { Departments = departments, Settings = settings });
 		}
 	}
 }

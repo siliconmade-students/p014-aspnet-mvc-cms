@@ -1,13 +1,10 @@
 ﻿using Cms.Business.Dtos;
-using Cms.Business.Services;
 using Cms.Business.Services.Abstract;
-using Cms.Data.Entity;
 using Cms.SharedLibrary.File.Abstract;
 using Cms.Web.Mvc.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Numerics;
 
 namespace Cms.Web.Mvc.Areas.Admin.Controllers
 {
@@ -47,7 +44,7 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            DoctorCreateViewModel model = new DoctorCreateViewModel();
+            DoctorCreateOrEditViewModel model = new DoctorCreateOrEditViewModel();
             model.Departments = _departmentService.GetAll().Select(e => new SelectListItem()
             {
                 Text = e.Name,
@@ -59,7 +56,7 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(DoctorCreateViewModel vm)
+        public async Task<IActionResult> Create(DoctorCreateOrEditViewModel vm)
         {
             if (ModelState.IsValid)
             {

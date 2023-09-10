@@ -1,10 +1,10 @@
-﻿using Cms.Data.Entity;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cms.Web.Mvc.Models
 {
-    public class DoctorCreateViewModel
+    public class DoctorCreateOrEditViewModel
     {
+        public int? Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
 

@@ -22,7 +22,7 @@
                            aria-haspopup="true" aria-expanded="false">Tıbbi Birimler <i class="icofont-thin-down"></i></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
                             <li><a class="dropdown-item" asp-controller="Department" asp-action="">Hepsini gör</a></li>
-                            @foreach (var item in Model.DepartmentDtos)
+                            @foreach (var item in Model.Departments)
                             {
                                 <li><a class="dropdown-item" asp-controller="Department" asp-action="@item.Slug">@item.Name </a></li>
                             }

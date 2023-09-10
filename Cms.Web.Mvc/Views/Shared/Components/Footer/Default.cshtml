@@ -1,4 +1,7 @@
-﻿@model NavigationViewModel
+﻿@using Cms.Business.Services.Abstract;
+@model NavigationViewModel
+@inject ISettingService _settingService
+
 <!-- footer Start -->
 <footer class="footer section gray-bg">
 	<div class="container">
@@ -30,7 +33,7 @@
 					<div class="divider mb-4"></div>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						@foreach (var item in Model.DepartmentDtos)
+						@foreach (var item in Model.Departments)
 						{
 							<li><a asp-controller="Department" asp-action="@item.Slug">@item.Name</a></li>
 						}
@@ -60,15 +63,21 @@
 							<i class="icofont-email mr-3"></i>
 							<span class="h6 mb-0">7/24 destek</span>
 						</div>
-						<h4 class="mt-2"><a href="mailto:support@email.com">destek@email.com</a></h4>
+						@{
+							var email = _settingService.GetValueByName(SettingConstants.Email);
+						}
+						<h4 class="mt-2"><a href="mailto:@email">@email</a></h4>
 					</div>
 
 					<div class="footer-contact-block">
 						<div class="icon d-flex align-items-center">
 							<i class="icofont-support mr-3"></i>
-							<span class="h6 mb-0">pzt - cm : 08:30 - 18:00</span>
+							<span class="h6 mb-0">@_settingService.GetValueByName(SettingConstants.CalismaGunSaat)</span>
 						</div>
-						<h4 class="mt-2"><a href="tel:+90-345-67890">+90-456-6588</a></h4>
+						@{
+							var telefon = _settingService.GetValueByName(SettingConstants.Telefon);
+						}
+						<h4 class="mt-2"><a href="tel:@telefon">@telefon</a></h4>
 					</div>
 				</div>
 			</div>

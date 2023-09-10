@@ -38,7 +38,6 @@
                 <td style="max-width:500px; ">@d.Content</td>
                 <td>@(d.IsActive?"Evet":"Hayır")</td>
                 <td>
-                    <a asp-area="admin" asp-controller="Page" asp-action="Details" asp-route-id="@d.Id">Detay </a> |
                     <a asp-area="admin" asp-controller="Page" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> |
                     <a asp-area="admin" asp-controller="Page" asp-action="Delete" asp-route-id="@d.Id">Sil</a>
                 </td>

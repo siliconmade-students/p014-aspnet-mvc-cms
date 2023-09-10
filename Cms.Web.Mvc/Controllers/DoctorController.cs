@@ -10,14 +10,15 @@ namespace Cms.Web.Mvc.Controllers
 		private readonly IDepartmentService _departmentService;
 
 		public DoctorController(IDoctorService doctorService, IDepartmentService departmentService)
-        {
-            _doctorService = doctorService;
-			_departmentService = departmentService;
-        }
-        public IActionResult Index()
 		{
-			return View(new DoctorViewModel { Doctors = _doctorService.GetAll() ,Departments= _departmentService.GetAll()});
+			_doctorService = doctorService;
+			_departmentService = departmentService;
 		}
+		public IActionResult Index()
+		{
+			return View(new DoctorViewModel { Doctors = _doctorService.GetAll(), Departments = _departmentService.GetAll() });
+		}
+
 		[Route("doctor/{id}")]
 		public IActionResult Single(int id)
 		{

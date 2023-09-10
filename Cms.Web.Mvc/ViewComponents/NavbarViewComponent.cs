@@ -19,7 +19,7 @@ namespace Cms.Web.Mvc.ViewComponents
         {
             var departments = _departmentService.GetAll();
 
-            return View(new NavigationViewModel { DepartmentDtos = departments});
+            return View(new NavigationViewModel { Departments = departments});
         }
     }
 }
