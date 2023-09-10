@@ -21,7 +21,6 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
             _departmentService = departmentService;
         }
 
-
         // GET: Admin/Categories
         public async Task<IActionResult> Index()
         {
