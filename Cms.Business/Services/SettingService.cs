@@ -2,6 +2,7 @@
 using Cms.Business.Dtos;
 using Cms.Business.Services.Abstract;
 using Cms.Data;
+using Cms.Data.Entity;
 
 namespace Cms.Business.Services
 {
@@ -16,13 +17,30 @@ namespace Cms.Business.Services
 			_mapper = mapper;
 		}
 
-		public List<SettingDto> GetAll()
+        public void Add(SettingDto setting)
+        {
+			_context.Settings.Add(_mapper.Map<Setting>(setting));
+			_context.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+			_context.Remove(_context.Settings.Find(id));
+			_context.SaveChanges();
+        }
+
+        public List<SettingDto> GetAll()
 		{
 			var settings = _context.Settings.ToList();
 			return _mapper.Map<List<SettingDto>>(settings);
 		}
+        public SettingDto GetById(int id)
+        {
+            var setting = _context.Settings.Find(id);
+            return _mapper.Map<SettingDto>(setting);
+        }
 
-		public string GetValueByName(string name)
+        public string GetValueByName(string name)
 		{
 			var setting = _context.Settings.Where(e => e.Name == name).FirstOrDefault();
 			if (setting != null)
@@ -30,5 +48,15 @@ namespace Cms.Business.Services
 
 			return "-";
 		}
-	}
+
+        public bool Update(int id, SettingDto setting)
+        {
+			var oldSetting = _context.Settings.Find(id);
+            if(oldSetting == null) return false;
+			oldSetting.Name = setting.Name;
+			oldSetting.Value = setting.Value;
+			_context.SaveChanges();
+			return true;
+        }
+    }
 }

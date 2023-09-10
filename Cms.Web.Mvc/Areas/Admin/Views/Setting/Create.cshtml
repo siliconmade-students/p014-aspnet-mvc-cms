@@ -1,0 +1,40 @@
+﻿@model SettingDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <h1>Ayar Oluştur</h1>
+        </div>
+    </div>
+</div>
+
+<h4 class="ml-2">Ayar</h4>
+<hr />
+<div class="row ml-2">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Başlık</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+                <label asp-for="Value" class="control-label mt-2">Açıklama</label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-Info ml-2">Listeye Dön</a>
+</div>
+

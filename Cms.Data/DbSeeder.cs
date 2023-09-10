@@ -107,13 +107,20 @@ public static class DbSeeder
 
 		if (!_db.Settings.Any())
 		{
+			/*
 			var settingFaker = new Faker<Setting>()
 				.RuleFor(s => s.UserId, f => f.Random.Number(1, 10))
 				.RuleFor(s => s.Name, f => f.Lorem.Word())
 				.RuleFor(s => s.Value, f => f.Lorem.Sentence());
 
 			var settings = settingFaker.Generate(10);
-
+			*/
+			List<Setting> settings = new List<Setting>()
+			{
+				new(){ Name="Telefon", Value="+90 123 456 7891"},
+				new(){ Name="Email", Value="hastane@novena.com"},
+				new(){ Name="CalismaGunSaat", Value="Pzt-Cm : Tatil, Cmt-Pz : Tatil"}
+			};
 			_db.Settings.AddRange(settings);
 			_db.SaveChanges();
 		}
