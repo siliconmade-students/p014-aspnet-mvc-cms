@@ -1,12 +1,15 @@
-﻿@model AppointmentViewModel
+﻿@using Cms.Business.Services.Abstract;
+@using Cms.Business.Services;
+@model AppointmentViewModel
+@inject ISettingService _settingService
 <section class="page-title bg-1">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">Book your Seat</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+                    <span class="text-white">Hemen Randevu Alın!</span>
+                    <h1 class="text-capitalize mb-5 text-lg">Randevu Sayfası</h1>
 
                 </div>
             </div>
@@ -21,8 +24,11 @@
                     <div class="feature-icon mb-3">
                         <i class="icofont-support text-lg"></i>
                     </div>
-                    <span class="h3">Call for an Emergency Service!</span>
-                    <h2 class="text-color mt-3">+84 789 1256 </h2>
+                    <span class="h3">Acil Servis</span>
+                    @{
+                        var telefon = _settingService.GetValueByName(SettingConstants.Telefon);
+                    }
+                    <h2 class="text-color mt-3"@telefon>@telefon</h2>
                 </div>
             </div>
             <div class="col-lg-8">
