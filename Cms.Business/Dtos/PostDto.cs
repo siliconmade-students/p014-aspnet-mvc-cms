@@ -12,7 +12,7 @@ namespace Cms.Business.Dtos
 
         
         public List<DepartmentDto>? Departments { get; set; }
-        public List<PostCommentDto> Comments { get; set; }
+        public List<PostCommentDto>? Comments { get; set; }
 
         public int PostImageDtoId { get; set; }
         public PostImageDto? PostImageDto { get; set; }

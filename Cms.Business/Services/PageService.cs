@@ -59,6 +59,7 @@ namespace Cms.Business.Services
             //oldDepartment = _mapper.Map<Department>(department);
             oldPage.Title = page.Title;
             oldPage.Content = page.Content;
+            oldPage.UpdatedAt = DateTime.Now;
             _context.SaveChanges();
 
             return true;

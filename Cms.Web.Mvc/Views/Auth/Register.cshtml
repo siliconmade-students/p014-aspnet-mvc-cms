@@ -1,68 +1,63 @@
-﻿@{
+﻿@model RegisterViewModel
+
+
+@{
     ViewData["Title"] = "Auth - Register";
 }
 
-@model RegisterViewModel
+
 
 <div class="container">
     <div class="row">
         <div class="col-4 offset-4">
-            <h1>Sign up</h1>
+            <h1>Kayıt Ol</h1>
             <form asp-controller="Auth" asp-action="Register" method="post">
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input class="form-control" asp-for="Name" id="name" type="text" required placeholder="Name">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input class="form-control" asp-for="Name" id="name" type="text" required placeholder="İsim">
                     <span class="text-danger" asp-validation-for="Name"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="surname" class="form-label">Surname</label>
-                    <input class="form-control" asp-for="Surname" id="surname" type="text" required placeholder="Surname">
+                    <label asp-for="Surname" class="form-label"></label>
+                    <input class="form-control" asp-for="Surname" id="surname" type="text" required placeholder="Soyad">
                     <span class="text-danger" asp-validation-for="Surname"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input class="form-control" asp-for="EmailAddress" id="email" type="email" required placeholder="name@example.com">
+                    <label asp-for="EmailAddress" class="form-label"></label>
+                    <input class="form-control" asp-for="EmailAddress" id="email" type="email" required placeholder="mail@mail.com">
                     <span class="text-danger" asp-validation-for="EmailAddress"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input class="form-control" asp-for="Password" id="password" type="password" required placeholder="Password">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input class="form-control" asp-for="Password" id="password" type="password" required placeholder="Şifre">
                     <span class="text-danger" asp-validation-for="Password"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Confirm password</label>
-                    <input class="form-control" asp-for="Password2" id="password" type="password" required placeholder="Repeat password">
+                    <label asp-for="Password2" class="form-label"></label>
+                    <input class="form-control" asp-for="Password2" id="password" type="password" required placeholder="Şifreyi Tekrarla">
                     <span class="text-danger" asp-validation-for="Password2"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="city" class="form-label">City</label>
-                    <input class="form-control" asp-for="City" id="city" type="text" required placeholder="Mersin">
+                    <label asp-for="City" class="form-label"></label>
+                    <input class="form-control" asp-for="City" id="city" type="text" required placeholder="Şehir">
                     <span class="text-danger" asp-validation-for="City"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input class="form-control" asp-for="Phone" id="phone" type="text" required placeholder="+905005050">
+                    <label asp-for="Phone" class="form-label"></label>
+                    <input class="form-control" asp-for="Phone" id="phone" type="text" required placeholder="5xxxxxxxxx">
                     <span class="text-danger" asp-validation-for="Phone"></span>
                 </div>
 
-                <div class="mb-3">
-                    <label for="role" class="form-label">Role</label>
-                    <select class="form-select" id="role" name="Roles" asp-for="Roles" required>
-                        <option value="" disabled selected>Select a role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="User">User</option>
-                    </select>
-                    <span class="text-danger"></span>
-                </div>
 
-                <button class="btn btn-primary solid blank mt-1 mb-3" type="submit">Sign Up</button>
+
+                <button class="btn btn-primary solid blank mt-1 mb-3" type="submit">Kayıt Ol</button>
 
             </form>
         </div>
