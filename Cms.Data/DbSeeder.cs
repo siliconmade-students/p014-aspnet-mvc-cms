@@ -23,22 +23,25 @@ public static class DbSeeder
             _db.Departments.AddRange(departments);
             _db.SaveChanges();
         }
-
+        
         if (!_db.Pages.Any())
         {
-            _db.Pages.Add(new Page { Title = "Hakkımızda", Content = "Hakkımızda", CreatedAt = DateTime.Now, IsActive = true });
-
+            _db.Pages.Add(new Page { Title = "Hakkımızda", Content = "Hakkımızda", CreatedAt = DateTime.Now, IsActive = true , Slug = "AboutUs"});
+            _db.Pages.Add(new Page { Title = "İletişim", Content = "İletişim Bilgilerimiz => Tel: +90 01992432243", CreatedAt = DateTime.Now, IsActive = true , Slug = "Contact"});
+            /*
             var pageFaker = new Faker<Page>()
                 .RuleFor(p => p.Title, f => f.Company.CompanyName())
                 .RuleFor(p => p.Content, f => f.Lorem.Paragraphs(3))
                 .RuleFor(p => p.IsActive, f => f.Random.Bool());
 
             var pages = pageFaker.Generate(5);
-
+            
             _db.Pages.AddRange(pages);
+            */
+            
             _db.SaveChanges();
         }
-
+        
         if (!_db.Users.Any())
         {
             var userFaker = new Faker<User>()

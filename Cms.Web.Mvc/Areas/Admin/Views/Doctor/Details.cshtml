@@ -1,4 +1,4 @@
-﻿@model DepartmentDto
+﻿@model DoctorDto
 
 @{
     ViewData["Title"] = "Details";
@@ -7,51 +7,34 @@
 <h1>Detaylar</h1>
 
 <div>
-    <h4>Departman</h4>
+    <h4>Doctor</h4>
     <hr />
     <div class="container-fluid">
         <div class="row cols-1 cols-md-2">
             <div class="col-12 col-md-6">
                 <div>
                     İsim:
-                    @Model.Name
+                    @Model.Name @Model.Surname
                 </div>
                 <div>
-                    Açıklama:
-                    @Model.Description
+                    Departman:
+                    @Model.DepartmentDto.Name
                 </div>
                 <div>
                     İçerik:
                     @Model.Content
                 </div>
                 <div>
-                    Slug:
-                    @Model.Slug
-                </div>
-                <div>
                     Resim:
-                    @Model.CoverImagePath
+                    @Model.ImagePath
+                    <img src="/images/team/@Model.ImagePath"/>
 
                 </div>
-                @if (Model.Doctors != null)
-                {
-                    <div>
-                        Doktorlar:
-                    </div>
-                    @foreach (var d in Model.Doctors)
-                    {
-                        <div>
-                            @d.Name @d.Surname
-                        </div>
-                    }
-                }
-
             </div>
-            <div class="col-12 col-md-6"><img src="/images/service/@Model.CoverImagePath" /></div>
         </div>
     </div>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

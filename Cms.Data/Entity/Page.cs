@@ -13,5 +13,6 @@ namespace Cms.Data.Entity
         public string Content { get; set; }
 
         public bool IsActive { get; set; }
+        public string Slug { get; set; }
     }
 }

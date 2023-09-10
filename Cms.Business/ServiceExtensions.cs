@@ -3,6 +3,8 @@ using Cms.Business.Services.Abstract;
 using Cms.Data;
 using Cms.SharedLibrary.Email;
 using Cms.SharedLibrary.Email.Interfaces;
+using Cms.SharedLibrary.File;
+using Cms.SharedLibrary.File.Abstract;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +28,7 @@ namespace Cms.Business
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<IPageService, PageService>();
+            services.AddTransient<IFileSaver, FileSaver>();
 
             services.AddSingleton<IEmailService, EmailService>();
 

@@ -12,19 +12,12 @@ namespace Cms.Web.Mvc.Controllers
         {
             _pageService = pageService;
         }
-
-        [Route("AboutUs")]
-        public IActionResult AboutUs()
+        [Route("Page/{slug}")]
+        public ActionResult Index(string slug)
         {
-            var page = _pageService.GetById(1);
+            var page = _pageService.GetBySlug(slug);
 
             return View(page);
-        }
-
-        [Route("Contact")]
-        public IActionResult Contact()
-        {
-            return View();
         }
        
     }

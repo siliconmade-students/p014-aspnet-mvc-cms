@@ -1,4 +1,4 @@
-﻿@model List<DepartmentDto>
+﻿@model List<DoctorDto>
 
 <div class="container text-center">
     <div class="row">
@@ -16,11 +16,11 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">İsim</th>
-            <th scope="col">Açıklama</th>
-            <th scope="col">Post sayısı</th>
+            <th scope="col">İsim Soyisim</th>
+            <th scope="col">içerik</th>
+            <th scope="col">Departman</th>
             <th scope="col">Doktor sorusu</th>
-            <th scope="col">Ayarlar</th>
+            <th scope="col"></th>
 
         </tr>
     </thead>
@@ -28,13 +28,13 @@
         @foreach(var d in Model){
         <tr>
             <th scope="row">@d.Id</th>
-            <td>@d.Name</td>
-            <td>@d.Description</td>
-            <td>@d.Posts.Count</td>
-            <td>@d.Doctors.Count</td>
-                <td><a asp-area="admin" asp-controller="Department" asp-action="Details" asp-route-id="@d.Id">Detay </a> | 
-                    <a asp-area="admin" asp-controller="Department" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> | 
-                    <a asp-area="admin" asp-controller="Department" asp-action="Delete" asp-route-id="@d.Id">Sil</a></td>
+            <td>@d.Name @d.Surname</td>
+            <td>@d.Content</td>
+            <td>@d.DepartmentDto.Name</td>
+                <td><a asp-area="Admin" asp-controller="Doctor" asp-action="Details" asp-route-id="@d.Id">Detay </a> |
+                    <a asp-area="Admin" asp-controller="Doctor" asp-action="Edit" asp-route-id="@d.Id">Düzenle</a> |
+                    <a asp-area="Admin" asp-controller="Doctor" asp-action="Delete" asp-route-id="@d.Id">Sil</a>
+                </td>
             
         </tr>
         }
