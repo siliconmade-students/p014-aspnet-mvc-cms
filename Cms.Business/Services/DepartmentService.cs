@@ -60,6 +60,7 @@ namespace Cms.Business.Services
             oldDepartment.Slug = department.Slug;
             oldDepartment.Content = department.Content;
             oldDepartment.Description = department.Description;
+            oldDepartment.UpdatedAt = DateTime.Now;
             _context.SaveChanges();
 
             return true;

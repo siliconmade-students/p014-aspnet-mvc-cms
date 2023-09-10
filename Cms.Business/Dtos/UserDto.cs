@@ -28,5 +28,7 @@ namespace Cms.Business.Dtos
 		[RegularExpression(@"^\d{10}$", ErrorMessage = "Geçersiz telefon numarası. Lütfen 10 haneli bir telefon numarası girin.")]
 		public string Phone { get; set; }
 
+		public string? Roles { get; set; }
+
 	}
 }

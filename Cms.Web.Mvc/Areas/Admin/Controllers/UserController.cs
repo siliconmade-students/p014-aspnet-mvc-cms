@@ -5,6 +5,7 @@ using Cms.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 using Cms.Business.Services.Abstract;
 using Cms.Business.Dtos;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cms.Web.Mvc.Areas.Admin.Controllers
 {
@@ -60,6 +61,11 @@ namespace Cms.Web.Mvc.Areas.Admin.Controllers
         {
 			var user = _userService.GetById(id);
 			if (user == null) return RedirectToAction(nameof(Index));
+            ViewBag.RolesDD = new List<SelectListItem>()
+            {
+                new(){ Text="Admin", Value="Admin"},
+                new(){ Text="User", Value="User"},
+            };
 			return View(user);
 		}
 

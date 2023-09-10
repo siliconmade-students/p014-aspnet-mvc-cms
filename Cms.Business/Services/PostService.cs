@@ -84,7 +84,7 @@ namespace Cms.Business.Services
 
 		public void Add(PostDto post)
 		{
-			_context.Add(_mapper.Map<Post>(post));
+			_context.Posts.Add(_mapper.Map<Post>(post));
 			_context.SaveChanges();
 		}
 
@@ -96,7 +96,7 @@ namespace Cms.Business.Services
 
 			//oldPost = _mapper.Map<Department>(post);
 			oldPost.Title = post.Title;
-			
+			oldPost.UpdatedAt = DateTime.Now;
 			oldPost.Content = post.Content;
 			_context.SaveChanges();
 
@@ -108,5 +108,12 @@ namespace Cms.Business.Services
 			_context.Posts.Remove(post);
 			_context.SaveChanges();
 		}
-	}
+
+        public int AddImage(PostImageDto dto)
+        {
+			_context.PostImages.Add(_mapper.Map<PostImage>(dto));
+			_context.SaveChanges();
+			return dto.Id;
+        }
+    }
 }

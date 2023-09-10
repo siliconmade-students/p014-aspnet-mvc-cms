@@ -13,5 +13,6 @@ namespace Cms.Business.Services.Abstract
         void Add(PostDto post);
         bool Update(int id, PostDto post);
         void Delete(int id);
+        int AddImage(PostImageDto dto);
     }
 }
