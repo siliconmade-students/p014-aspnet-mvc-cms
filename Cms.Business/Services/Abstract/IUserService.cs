@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cms.Business.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,11 @@ namespace Cms.Business.Services.Abstract
     public interface IUserService
     {
         void SendResetPasswordEmail(string email);
+
+        UserDto GetById(int id);
+        List<UserDto> GetAll();
+        bool Update(int id,UserDto user);
+        void Add(UserDto user);
+        void Delete(int id);
     }
 }

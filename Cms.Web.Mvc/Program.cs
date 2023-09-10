@@ -1,5 +1,6 @@
 using Cms.Business;
 using Cms.SharedLibrary.Email;
+using Cms.Web.Mvc.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email"));
+builder.Services.Configure<Statistics>(builder.Configuration.GetSection("Statistics"));
 
 builder.Services.AddBusinessServices(builder.Configuration);
 
@@ -52,3 +54,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+//todo departman ekleme / admin kýsmý çoðu ekleme sayfasý eksik
+//todo admin doktor ve post sayfalarý yapýlmalý

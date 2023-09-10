@@ -25,6 +25,5 @@ namespace Cms.Data.Entity
 
         public string? Roles { get; set; }
 
-        public string? PhotoPath { get; set; }
     }
 }

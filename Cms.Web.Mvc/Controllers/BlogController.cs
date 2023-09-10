@@ -41,7 +41,6 @@ namespace Cms.Web.Mvc.Controllers
 			return View(_postService.GetAll(page, departmanDto.Slug));
 		}
 
-		//todo Departman ile post filtreleme eklenecek      
 
 		public IActionResult Detail(int id)
 		{
