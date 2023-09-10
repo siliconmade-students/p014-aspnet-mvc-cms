@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Cms.Business.Services.Abstract;
+@model NavigationViewModel
+@inject ISettingService _settingService
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -53,7 +56,10 @@
 							<i class="icofont-support"></i>
 						</div>
 						<span>Acil Vakalar</span>
-						<h4 class="mb-3">1-800-700-6200</h4>
+						@{
+							var telefon = _settingService.GetValueByName(SettingConstants.Telefon);
+						}
+						<h4 class="mt-2"><a href="tel:@telefon">@telefon</a></h4>
 						<p>Acil durumlarda her zaman ulaş. Herhangi bir aciliyet durumunda bizimle iletişime geç.</p>
 					</div>
 				</div>
@@ -145,7 +151,8 @@
 				<div class="appoinment-content">
 					<img src="images/about/img-3.jpg" alt="" class="img-fluid">
 					<div class="emergency">
-						<h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+90 345 67980</h2>
+						
+						<h2 class="text-lg"><i class="icofont-phone-circle text-lg" href="@telefon"></i>@telefon</h2>
 					</div>
 				</div>
 			</div>

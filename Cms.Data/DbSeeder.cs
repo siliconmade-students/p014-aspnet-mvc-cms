@@ -6,7 +6,9 @@ namespace Cms.Data;
 public static class DbSeeder
 {
 	public static void Seed(AppDbContext _db)
-	{
+	{ 
+	
+
 		List<Department> departmentsCopy = new List<Department>();
 		if (!_db.Departments.Any())
 		{
@@ -27,7 +29,7 @@ public static class DbSeeder
 		if (!_db.Pages.Any())
 		{
 			_db.Pages.Add(new Page { Title = "Hakkımızda", Content = "Hakkımızda", CreatedAt = DateTime.Now, IsActive = true, Slug = "AboutUs" });
-			_db.Pages.Add(new Page { Title = "İletişim", Content = "İletişim Bilgilerimiz => Tel: +90 01992432243", CreatedAt = DateTime.Now, IsActive = true, Slug = "Contact" });
+			_db.Pages.Add(new Page { Title = "İletişim", Content = "İletişim Bilgilerimiz => Tel: +90 ", CreatedAt = DateTime.Now, IsActive = true, Slug = "Contact" });
 			/*
             var pageFaker = new Faker<Page>()
                 .RuleFor(p => p.Title, f => f.Company.CompanyName())
