@@ -11,6 +11,7 @@ namespace Cms.Business.Services.Abstract
     public interface IDepartmentService
     {
         List<DepartmentDto> GetAll();
+        int GetAllNo();
         DepartmentDto GetByDepartmentSlug(string slug);
         DepartmentDto GetById(int id);
 

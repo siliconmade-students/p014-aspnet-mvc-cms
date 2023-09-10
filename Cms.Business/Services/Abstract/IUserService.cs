@@ -13,6 +13,7 @@ namespace Cms.Business.Services.Abstract
 
         UserDto GetById(int id);
         List<UserDto> GetAll();
+        int GetAllNo();
         bool Update(int id,UserDto user);
         void Add(UserDto user);
         void Delete(int id);

@@ -47,7 +47,12 @@ namespace Cms.Business.Services
 			return _mapper.Map<List<UserDto>>(_appDbContext.Users.ToList());
 		}
 
-		public UserDto GetById(int id)
+        public int GetAllNo()
+        {
+            return _mapper.Map<List<UserDto>>(_appDbContext.Users.ToList()).Count();
+        }
+
+        public UserDto GetById(int id)
 		{
 			return _mapper.Map<UserDto>(_appDbContext.Users.Find(id));
 		}

@@ -37,7 +37,12 @@ namespace Cms.Business.Services
 			return _mapper.Map<List<PostDto>>(postList);
 		}
 
-		public PostDto GetById(int id)
+        public int GetAllNo()
+        {
+            return _mapper.Map<List<PostDto>>(_context.Posts.ToList()).Count();
+        }
+
+        public PostDto GetById(int id)
 		{
 			return _mapper.Map<PostDto>(
 				_context.Posts.Include(e => e.User).Include(e => e.Departments).Include(e => e.PostImage).Include(e => e.Comments).ThenInclude(c => c.User).FirstOrDefault(e => e.Id == id)
@@ -108,5 +113,12 @@ namespace Cms.Business.Services
 			_context.Posts.Remove(post);
 			_context.SaveChanges();
 		}
-	}
+
+        public int AddImage(PostImageDto dto)
+        {
+            _context.PostImages.Add(_mapper.Map<PostImage>(dto));
+            _context.SaveChanges();
+            return dto.Id;
+        }
+    }
 }

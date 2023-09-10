@@ -30,6 +30,11 @@ namespace Cms.Business.Services
             return _mapper.Map<List<DepartmentDto>>(entities);
         }
 
+        public int GetAllNo()
+        {
+            return _mapper.Map<List<DepartmentDto>>(_context.Departments.ToList()).Count();
+        }
+
         public DepartmentDto GetById(int id)
         {
             var entity = _context.Departments.Include(e => e.Posts).Include(e => e.Doctors).FirstOrDefault(e => e.Id == id);
