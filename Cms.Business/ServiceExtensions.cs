@@ -41,7 +41,7 @@ namespace Cms.Business
 		{
 			var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-			//db.Database.EnsureDeleted();
+			db.Database.EnsureDeleted();
 
 			db.Database.EnsureCreated();
 
