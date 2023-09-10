@@ -79,5 +79,10 @@ namespace Cms.Business.Services
             _context.Pages.Add(_mapper.Map<Page>(page));
             _context.SaveChanges();
         }
+
+        public PageDto GetBySlug(string slug)
+        {
+            return _mapper.Map<PageDto>(_context.Pages.FirstOrDefault(e => e.Slug == slug));
+        }
     }
 }

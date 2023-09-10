@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cms.Data;
 using Microsoft.EntityFrameworkCore;
+using Cms.Data.Entity;
 
 namespace Cms.Business.Services
 {
@@ -41,5 +42,38 @@ namespace Cms.Business.Services
 
 			return _mapper.Map<List<DoctorDto>>(entities);
 		}
-	}
+
+        public void Delete(int id)
+        {
+            var a = _context.Doctors.Find(id);
+            _context.Doctors.Remove(a);
+            _context.SaveChanges();
+        }
+
+        public void Add(DoctorDto doctor)
+        {
+           _context.Add(_mapper.Map<Doctor>(doctor));
+            _context.SaveChanges();
+        }
+
+        public bool Update(int id, DoctorDto doctor)
+        {
+            var oldDoctor = _context.Doctors.Find(id);
+
+            if (oldDoctor is null) return false;
+
+            //oldDepartment = _mapper.Map<Department>(department);
+            oldDoctor.Id = id;
+            oldDoctor.Name = doctor.Name;
+            oldDoctor.UpdatedAt = DateTime.Now;
+            oldDoctor.DepartmentId = doctor.DepartmentDtoId;
+            oldDoctor.Content = doctor.Content;
+            oldDoctor.ImagePath = doctor.ImagePath;
+            oldDoctor.Surname = doctor.Surname;
+
+            _context.SaveChanges();
+
+            return true;
+        }
+    }
 }

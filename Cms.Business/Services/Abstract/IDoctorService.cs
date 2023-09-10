@@ -12,5 +12,8 @@ namespace Cms.Business.Services.Abstract
 		List<DoctorDto> GetAll();
 		DoctorDto GetById(int id);
 		List<DoctorDto> GetByDepartmentId(int departmentId);
+		void Delete(int id);
+		void Add(DoctorDto doctor);
+		bool Update(int id, DoctorDto doctor);
 	}
 }
